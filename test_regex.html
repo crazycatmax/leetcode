@@ -12,6 +12,7 @@
     <div>regex</div>
 
 </body>
+
 <script>
     // 正则表达式
 
@@ -132,9 +133,11 @@
     var str = `this is!@#$%^&*()_+":;><?,/.
     A real man!`
     // var reg = /./g      //换行除外
-    // var reg=/[\s\S]/g   //包括换行
-    // var reg=/[\d\D]/g   //包括换行
-    var reg = /[\w\W]/g   //包括换行
+    var reg=/./gs
+    // var reg=/[\s\S]/g  
+    // var reg=/[\d\D]/g   
+    // var reg = /[\w\W]/g   
+    // var reg=/[^]/g
     var replacement = 'X'
     var str2 = str.replace(reg, replacement)
     print(reg, replacement, str, str2, title)
@@ -352,12 +355,9 @@
         console.log(match.input+'-----match.input')
     }
     console.log('')
-    // var replacement = 'X'
-    // var str2 = str.replace(reg, replacement)
-    // print(reg, replacement, str, str2, title)
 
 
-
+    
     // xxx
     var title = 'xxx'
     var str = 'xxxxx'
