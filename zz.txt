@@ -5,4 +5,8 @@
 
 333333
 
+<<<<<<< HEAD
 this is a shit
+=======
+this is a big man 
+>>>>>>> dev
