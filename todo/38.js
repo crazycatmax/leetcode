@@ -48,8 +48,7 @@ var countAndSay = function (n) {
   return recursion(n)
 }
 
-
-// 方法2  迭代法
+// 方法2  迭代法  todo
 var countAndSay2 = function (n) {
   var i,
     j,
