@@ -30,7 +30,7 @@ for (int i = 0; i < len; i++) {
 
 
 
-// 方法1	快慢指针
+// 	快慢指针
 var removeDuplicates = function (nums) {
 	var i,
 		j,
