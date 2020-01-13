@@ -24,7 +24,8 @@ var longestCommonPrefix = function (strs) {
   if (!head) return ''
   for (i = 0; i < head.length; i++) {
     for (j = 1; j < strs.length; j++) {
-      if (strs[j][i] !== head[i]) return head.slice(0, i)
+      if (strs[j][i] !== head[i]) 
+        return head.slice(0, i)
     }
   }
   return head
@@ -34,9 +35,11 @@ var longestCommonPrefix2 = function (strs) {
   var i,
     j,
     head = strs[0]
-  if (!head) return ''
+  if (!head) 
+    return ''
   for (i = 0; i < head.length; i++) {
-    if (strs.some(t => !t.startsWith(head.slice(0, i + 1)))) return head.slice(0, i)
+    if (strs.some(t => !t.startsWith(head.slice(0, i + 1)))) 
+      return head.slice(0, i)
   }
   return head
 };
