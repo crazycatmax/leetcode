@@ -39,5 +39,6 @@ var convertToTitle = function (n) {
 	}
 	while ((temp = stack.pop()) !== undefined) {
 		s += str.charAt(temp)
-	return s
+  }
+  return s
 }
