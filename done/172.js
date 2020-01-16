@@ -30,7 +30,7 @@ var trailingZeroes = function (n) {
   return count
 }
 
-// 
+// 求阶乘中5的因子的个数
 var trailingZeroes = function (n) {
   var count = 0
   while (n > 0) {
