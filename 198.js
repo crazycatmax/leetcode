@@ -12,34 +12,22 @@
 
 示例 2:
 输入: [2,7,9,3,1]
-输出: 12
+输出: 12  
 解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
      偷窃到的最高金额 = 2 + 9 + 1 = 12 。 */
 
 
 
-// 递归超时
 var rob = function (nums) {
-  function recursion(arr) {
-    var len = arr.length
-    if (len === 0) return 0
-    if (len === 1) return arr[0]
-    if (len === 2) return Math.max(arr[0], arr[1])
-    return Math.max(recursion(arr.slice(0, len - 1)), recursion(arr.slice(0, len - 2)) + arr[len - 1])
+  var i,
+    temp,
+    prevMax = 0,
+    currMax = 0,
+    len = nums.length
+  for (i = 0; i < len; i++) {
+    temp = currMax
+    currMax = Math.max(prevMax + nums[i], currMax)
+    prevMax = temp
   }
-  return recursion(nums)
-}
-
-
-
-// 尾递归 todos
-var rob2 = function (nums) {
-  function recursion(arr, prev, curr) {
-    var len = arr.length
-    if (len === 0) return 0
-    if (len === 1) return arr[0]
-    if (len === 2) return Math.max(arr[0], arr[1])
-    // return recursion(arr.slice(0, len - 1), curr, Math.max(curr, prev + arr[len - 1]))
-  }
-  return recursion(nums,0,0)
+  return currMax
 }
