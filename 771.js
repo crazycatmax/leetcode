@@ -45,9 +45,8 @@ var numJewelsInStones3 = function (J, S) {
 // reduce
 var numJewelsInStones4 = function (J, S) {
     return Array.from(S).reduce((acc, cur) => {
-        return J.includes(cur) ? acc+1 : acc
+        return J.includes(cur) ? acc + 1 : acc
     }, 0)
 }
-var numJewelsInStones4 = function (J, S) {
-    return Array.from(S).reduce((acc, cur) => (J.includes(cur) ? acc+1 : acc), 0)
-}
+
+var numJewelsInStones4 = (J, S) => Array.from(S).reduce((acc, cur) => (J.includes(cur) ? acc + 1 : acc), 0)

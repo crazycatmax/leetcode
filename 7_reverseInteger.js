@@ -20,7 +20,7 @@
 
 
 
-// 方法1    字符串和数组方法，正则匹配
+//  字符串和数组方法，正则匹配
 const max = 2147483647
 const min = -2147483648
 var reverse = function (x) {
@@ -30,7 +30,7 @@ var reverse = function (x) {
     return x > max || x < min ? 0 : x
 }
 
-// 方法2    遍历整数每一位，逆序求和
+//  遍历整数每一位，逆序求和
 var reverse2 = function (x) {
     var negative = x < 0,
         res = 0
@@ -43,7 +43,7 @@ var reverse2 = function (x) {
     return res < min || res > max ? 0 : res
 }
 
-// 方法3   递归
+//  递归
 var reverse3 = function (x) {
     var negative = x < 0,
         res
@@ -59,7 +59,7 @@ var reverse3 = function (x) {
     return res < min || res > max ? 0 : res
 }
 
-// 方法4   尾递归
+//  尾递归
 var reverse4 = function (x) {
     var negative = x < 0,
         res

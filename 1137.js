@@ -23,6 +23,7 @@ T_4 = 1 + 1 + 2 = 4
 
 
 
+// 尾递归
 var tribonacci = function (N) {
 	function recursion(m, a, b, c) {
 		if (0 === m) return c
