@@ -45,8 +45,8 @@ var longestPalindrome = function (s) {
 var longestPalindrome2 = function (s) {
     var i,
         arr = [],
-        len = 0
-    trans = c => c.codePointAt(0),
+        len = 0,
+        trans = c => c.codePointAt(0),
         hasOdd = false
     for (i = 0; i < s.length; i++) {
         if (arr[trans(s[i])]) {
@@ -64,4 +64,22 @@ var longestPalindrome2 = function (s) {
         }
     }
     return hasOdd ? len + 1 : len
+}
+
+// 哈希表2
+var longestPalindrome3 = function (s) {
+    var i,
+        len = 0,
+        hash = {}
+    for (i = 0; i < s.length; i++) {
+        if (hash[s[i]]) {
+            len++
+            hash[s[i]] = 0
+        } else {
+            hash[s[i]] = 1
+        }
+    }
+    len *= 2
+    if (s.length > len) len++
+    return len
 }
