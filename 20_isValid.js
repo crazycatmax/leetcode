@@ -1,4 +1,4 @@
-/* 20. 有效的括号
+/* 20_isValid 有效的括号
 
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
@@ -28,7 +28,7 @@
 输出: true */
 
 
-// 方法1
+// 
 var isValid = function (s) {
   var i,
     stack = [],
@@ -48,7 +48,7 @@ var isValid = function (s) {
 }
 
 
-// 方法1优化
+// 
 var isValid2 = function (s) {
   var i,
     stack = [],

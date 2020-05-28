@@ -1,7 +1,6 @@
 /* 38. 外观数列
 
 「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：
-
 1.     1
 2.     11
 3.     21
@@ -25,7 +24,7 @@
 
 
 
-// 方法1  递归法
+//  递归法
 var countAndSay = function (n) {
   function recursion(t) {
     var i,
@@ -49,27 +48,27 @@ var countAndSay = function (n) {
 }
 
 // 方法2  迭代法  todo
-var countAndSay2 = function (n) {
-  var i,
-    j,
-    s,
-    str,
-    count
+// var countAndSay2 = function (n) {
+//   var i,
+//     j,
+//     s,
+//     str,
+//     count
 
-  if (n === 1) return '1'
-  if (n === 2) return '11'
-  str = '11'
-  for (i = 3; i <= n ; i++) {
-    s = str
-    count = 0
-    for (j = 0; j < s.length - 1; j++) {
-      count++
-      if (s[j] !== s[j + 1]) {
-        str += `${count}${s[j]}`
-        count = 0
-      }
-    }
-    str += `${count+1}${s[j]}`
-  }
-  return str
-}
+//   if (n === 1) return '1'
+//   if (n === 2) return '11'
+//   str = '11'
+//   for (i = 3; i <= n ; i++) {
+//     s = str
+//     count = 0
+//     for (j = 0; j < s.length - 1; j++) {
+//       count++
+//       if (s[j] !== s[j + 1]) {
+//         str += `${count}${s[j]}`
+//         count = 0
+//       }
+//     }
+//     str += `${count+1}${s[j]}`
+//   }
+//   return str
+// }

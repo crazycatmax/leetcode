@@ -1,4 +1,4 @@
-/* 14. 最长公共前缀
+/* 14_longestCommonPrefix 最长公共前缀
 
 编写一个函数来查找字符串数组中的最长公共前缀。
 如果不存在公共前缀，返回空字符串 ""。
@@ -17,6 +17,7 @@
 
 
 
+// 暴力循环
 var longestCommonPrefix = function (strs) {
   var i,
     j,
@@ -31,6 +32,7 @@ var longestCommonPrefix = function (strs) {
   return head
 };
 
+// 字符串-数组方法
 var longestCommonPrefix2 = function (strs) {
   var i,
     j,
@@ -43,5 +45,3 @@ var longestCommonPrefix2 = function (strs) {
   }
   return head
 };
-
-var longestCommonPrefix3 = function (strs) {}

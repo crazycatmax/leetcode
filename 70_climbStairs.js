@@ -35,7 +35,7 @@
 
 
 
-// 方法1	常规递归 超出时间限制
+// 	常规递归 超出时间限制
 var climbStairs = function (n) {
 	function recursion(m) {
 		if (1 === m) return 1
@@ -45,7 +45,7 @@ var climbStairs = function (n) {
 	return recursion(n)
 }
 
-// 方法2	尾递归
+//  尾递归
 var climbStairs2 = function (n) {
 	function recursion(m, acc, cur) {
 		if (1 === m) return cur
@@ -55,7 +55,7 @@ var climbStairs2 = function (n) {
 	return recursion(n, 2, 1)
 }
 
-// 方法3	迭代法
+//  迭代法
 var climbStairs3 = function (n) {
 	var i, acc = 2,
 		cur = 1

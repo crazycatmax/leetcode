@@ -1,4 +1,4 @@
-/* 26. 删除排序数组中的重复项
+/* 26_removeDuplicates 删除排序数组中的重复项
 
 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
@@ -25,22 +25,33 @@ int len = removeDuplicates(nums);
 // 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
 for (int i = 0; i < len; i++) {
     print(nums[i]);
-}
- */
+} */
 
 
- 
-// 方法1	快慢指针
+
+// splice删除重复项
 var removeDuplicates = function (nums) {
-	var i,
-		j,
-		len = nums.length
-	if (len < 2) return len
-	for (i = 0, j = 0; i < len - 1; i++) {
-		if (nums[i] !== nums[i + 1]) {
-			nums[j++] = nums[i]
-		}
-	}
-	nums[j++] = nums[i]
-	return j
+  var i
+  for (i = 0; i < nums.length - 1; i++) {
+    if (nums[i] === nums[i + 1]) {
+      nums.splice(i, 1)
+      i--
+    }
+  }
+  return nums.length
+};
+
+//  快慢指针
+var removeDuplicates = function (nums) {
+  var i,
+    j,
+    len = nums.length
+  if (len < 2) return len
+  for (i = 0, j = 0; i < len - 1; i++) {
+    if (nums[i] !== nums[i + 1]) {  //遇到重复项，移动慢指针
+      nums[j++] = nums[i]
+    }
+  }
+  nums[j++] = nums[i]
+  return j
 };

@@ -1,4 +1,4 @@
-/* 189. 旋转数组
+/* 189_rotate 旋转数组
 
 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
 
@@ -23,7 +23,6 @@
 
 
 
-
 // pop/unshift
 var rotate = function (nums, k) {
   while (k--) {
@@ -34,7 +33,7 @@ var rotate = function (nums, k) {
 
 // slice
 var rotate = function (nums, k) {
-  return [...nums.slice(nums.length - k), ...(nums.slice(0, nums.length - k))]
+  return [...nums.slice(nums.length - k), ...nums.slice(0, nums.length - k)]
 }
 
 // reverse
@@ -42,3 +41,8 @@ var rotate = function (nums, k) {
   nums.reverse()
   return [...nums.slice(0, k).reverse(), ...nums.slice(k).reverse()]
 }
+
+// splice
+var rotate = function (nums, k) {
+  return nums.splice(0, 0, ...nums.splice(nums.length - k))
+};

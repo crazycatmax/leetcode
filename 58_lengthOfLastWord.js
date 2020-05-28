@@ -1,5 +1,4 @@
-/* 
-58. 最后一个单词的长度
+/* 58_lengthOfLastWord 最后一个单词的长度
 
 给定一个仅包含大小写字母和空格 ' ' 的字符串，返回其最后一个单词的长度。
 如果不存在最后一个单词，请返回 0 。
@@ -10,9 +9,9 @@
 输入: "Hello World"
 输出: 5 */
 
-``
 
-// 方法1	正则表达式
+
+//  正则表达式
 var lengthOfLastWord = function (s) {
 	var regex = /([a-zA-Z]+)\s*$/
 	var arr = s.match(regex)
@@ -20,7 +19,7 @@ var lengthOfLastWord = function (s) {
 	return arr[1].length
 };
 
-// 方法2	普通方法
+// 普通方法
 var lengthOfLastWord = function (s) {
 	var i,
 		len = 0

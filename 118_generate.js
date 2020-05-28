@@ -1,5 +1,4 @@
-/* 
-118. 杨辉三角
+/* 118_generate 杨辉三角
 
 给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
 
@@ -14,11 +13,11 @@
    [1,2,1],
   [1,3,3,1],
  [1,4,6,4,1]
-] */
+]  */
 
 
 
-// for循环
+// 暴力循环
 var generate = function (numRows) {
 	var i,
 		j,

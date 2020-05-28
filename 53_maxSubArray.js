@@ -1,4 +1,4 @@
-/* 53. 最大子序和
+/* 53_maxSubArray 最大子序和
 
 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
@@ -13,7 +13,7 @@
 
 
 
-// 方法1  滑动窗口
+// 滑动窗口，双指针
 var maxSubArray = function (nums) {
 	var i, //右窗口
 		l = 0, //左窗口
@@ -32,7 +32,7 @@ var maxSubArray = function (nums) {
 	return max
 };
 
-// 方法1  滑动窗口  优化
+// 滑动窗口  优化
 var maxSubArray = function (nums) {
 	var i,
 		max = nums[0],

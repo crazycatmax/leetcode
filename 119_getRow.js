@@ -1,4 +1,4 @@
-/* 119. 杨辉三角 II
+/* 119_getRow 杨辉三角 II
 
 给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
 在杨辉三角中，每个数是它左上方和右上方的数的和。
@@ -12,7 +12,11 @@
 
 
 
-// 迭代
+// 迭代 直角三角靠左
+// *
+// **
+// ***
+// ****
 var getRow = function (rowIndex) {
 	var i,
 		j,
@@ -26,8 +30,24 @@ var getRow = function (rowIndex) {
 	return row
 }
 
-// 递归
+// 迭代 直角三角靠右
+//    *
+//   **
+//  ***
+// ****
 var getRow2 = function (rowIndex) {
+	let resultArr = [1];
+	for (let i = 0; i < rowIndex; i++) {
+		resultArr.unshift(0);
+		for (let j = 0; j < i + 1; j++) {
+			resultArr[j] = resultArr[j] + resultArr[j + 1];
+		}
+	}
+	return resultArr;
+};
+
+// 递归
+var getRow3 = function (rowIndex) {
 	function recursion(n) {
 		if (n === 0) return [1]
 		if (n === 1) return [1, 1]

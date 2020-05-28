@@ -1,4 +1,4 @@
-/* 27.移除元素
+/* 27_removeElement 移除元素
 
 给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
@@ -30,40 +30,43 @@ for (int i = 0; i < len; i++) {
 
 
 
+// splice 删除元素
 var removeElement = function (nums, val) {
-    var i, len
-    for (i = 0, len = nums.length; i < len; i++) {
-        if (val === nums[i]) {
-            nums.splice(i, 1)
-            i--
-            len--
-        }
+  var i, len
+  for (i = 0, len = nums.length; i < len; i++) {
+    if (val === nums[i]) {
+      nums.splice(i, 1)
+      i--
+      len--
     }
-    return nums.length
+  }
+  return nums.length
 };
 
+// 同上，循环条件nums.length动态变化
 var removeElement2 = function (nums, val) {
-    for (var i = 0; i < nums.length; i++) {
-        if (val === nums[i]) {
-            nums.splice(i, 1)
-            i--
-        }
+  for (var i = 0; i < nums.length; i++) {
+    if (val === nums[i]) {
+      nums.splice(i, 1)
+      i--
     }
-    return nums.length
+  }
+  return nums.length
 };
 
 // 快慢指针
 var removeElement3 = function (nums, val) {
-    var i, k = 0
-    for (i = 0; i < nums.length; i++) {
-        if (val !== nums[i]) {
-            nums[k++] = nums[i]
-        }
+  var i, k = 0
+  for (i = 0; i < nums.length; i++) {
+    if (val !== nums[i]) {
+      nums[k++] = nums[i]
     }
-    return k
+  }
+  return k
 };
 
+// es6 数组过滤方法 filter
 var removeElement4 = function (nums, val) {
-    nums = nums.filter(t => t !== val)
-    return nums.length
+  nums = nums.filter(t => t !== val)
+  return nums.length
 };

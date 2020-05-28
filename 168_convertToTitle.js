@@ -1,4 +1,4 @@
-/* 168. Excel表列名称
+/* 168_convertToTitle Excel表列名称
 
 给定一个正整数，返回它在 Excel 表中相对应的列名称。
 
@@ -26,19 +26,20 @@
 
 
 
+// 
 var convertToTitle = function (n) {
-	var temp,
-		stack = [],
-		str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		s = ''
-	while (n) {
-		n--
-		temp = n % 26
-		stack.push(temp)
-		n = Math.floor(n / 26)
-	}
-	while ((temp = stack.pop()) !== undefined) {
-		s += str.charAt(temp)
+  var temp,
+    stack = [],
+    str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    s = ''
+  while (n) {
+    n-- //关键语句
+    temp = n % 26
+    stack.push(temp)
+    n = Math.floor(n / 26)
+  }
+  while ((temp = stack.pop()) !== undefined) {
+    s += str.charAt(temp)
   }
   return s
 }
