@@ -1,4 +1,4 @@
-/* 9. 回文数
+/* 9_palindromeNumber 回文数
 
 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 
@@ -21,12 +21,12 @@
 
 
 
-// 方法1    字符串、数组方法
+//  字符串、数组方法
 var isPalindrome = function (x) {
     return x === Number(x.toString().split('').reverse().join(''))
 }
 
-// 方法2    递归
+//  递归
 var isPalindrome2 = function (x) {
     function recursion(s) { //定义内部函数，递归标准用法
         s = s.toString()
@@ -37,7 +37,7 @@ var isPalindrome2 = function (x) {
     return recursion(x)
 }
 
-// 方法3    尾递归
+//  尾递归
 var isPalindrome3 = function (x) {
     function recursion(s, bool) {  //尾递归用法，添加额外参数
         if (bool === undefined) bool = true
@@ -49,7 +49,7 @@ var isPalindrome3 = function (x) {
     return recursion(x)
 }
 
-// 方法4    直接处理数字
+//  直接处理数字
 var isPalindrome4 = function (x) {
     var res = 0,
         init = x

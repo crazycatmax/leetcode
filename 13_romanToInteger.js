@@ -1,4 +1,4 @@
-/* 13. 罗马数字转整数
+/* 13_romanToInteger 罗马数字转整数
 
 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
 
@@ -51,7 +51,7 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 
 
 
-// 方法1    字符串、数组方法
+//  字符串、数组方法
 var romanToInt = function (s) {
     var i, c, c2
     sum = 0,
@@ -73,9 +73,4 @@ var romanToInt = function (s) {
         s[i + 1] && rule[s[i]] && rule[s[i]].includes(s[i+1]) ? sum -= value[s[i]] : sum += value[s[i]]
     }
     return sum
-}
-
-// 方法2    
-var romanToInt2 = function (x) {
-
 }

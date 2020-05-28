@@ -1,5 +1,4 @@
-/* 
-3. 无重复字符的最长子串
+/* 3_longestSubstring 无重复字符的最长子串
 
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
@@ -20,7 +19,7 @@
 请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。 */
 
 
-// 方法1    遍历每个字符
+// 遍历每个字符
 var lengthOfLongestSubstring = function (s) {
     var i,
         j,
@@ -46,7 +45,7 @@ var lengthOfLongestSubstring = function (s) {
     return maxLength
 };
 
-// 方法2    数组-动态最短字串
+// 数组-动态最短字串
 var lengthOfLongestSubstring2 = function (s) {
     var i,
         c,
@@ -67,6 +66,3 @@ var lengthOfLongestSubstring2 = function (s) {
     if (arr.length > maxLength) maxLength = arr.length
     return maxLength
 };
-
-
-var lengthOfLongestSubstring3 = function (s) {};

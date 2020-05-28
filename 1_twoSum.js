@@ -1,5 +1,5 @@
 
-/* 1.两数之和
+/* 1_twoSum 两数之和
 
 给定一个整数数组 nums 和一个目标值 target，
 请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -13,7 +13,7 @@
 
     
 
-// 方法1    暴力解法for循环遍历
+// 暴力解法for循环遍历
 var twoSum = function (nums, target) {
     for (var i = 0, len = nums.length; i < len; i++) {
         // 作差得到第二个数
@@ -26,7 +26,7 @@ var twoSum = function (nums, target) {
     }
 };
 
-// 方法2    map集合，key值存储数据元素，value存储下标index
+// map集合，key值存储数据元素，value存储下标index
 var twoSum2 = function (nums, target) {
     var m = new Map()
     var dif
@@ -39,7 +39,7 @@ var twoSum2 = function (nums, target) {
     }
 }
 
-// 方法3    数组，value存储下标index
+// 数组，value存储下标index
 var twoSum3 = function (nums, target) {
     var arr = [];
     for (var i = 0; i < nums.length; i++) {
