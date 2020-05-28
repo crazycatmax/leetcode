@@ -1,4 +1,4 @@
-/* 258. 各位相加
+/* 258_addDigits 各位相加
 
 给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。
 
@@ -12,7 +12,7 @@
 
 
 
-// 双循环
+// 对每位数字求和
 var addDigits = function (num) {
   var temp
   while (num > 9) {
@@ -26,7 +26,8 @@ var addDigits = function (num) {
   return num
 }
 
-/*  n1=a*10+b
+/*  
+    n1=a*10+b
     n2=a+b
     n1-n2=9*a
 
@@ -36,7 +37,7 @@ var addDigits = function (num) {
 
     所以各位相加的结果模9 === 原数字模9
 */
-var addDigits = function (num) {
+var addDigits2 = function (num) {
   if (num < 1) return 0
   return num % 9 ? num % 9 : 9
 }

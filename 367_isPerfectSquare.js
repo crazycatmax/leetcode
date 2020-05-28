@@ -15,7 +15,7 @@
 
 // 
 var isPerfectSquare = function (num) {
-    var i = 1,
+    var i = 1,f
         temp
     while (1) {
         temp = i * i
