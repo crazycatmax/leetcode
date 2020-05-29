@@ -1,4 +1,4 @@
-/* 443. 压缩字符串
+/* 443_compress 压缩字符串
 
 给定一组字符，使用原地算法将其压缩。
 压缩后的长度必须始终小于或等于原数组长度。
@@ -41,24 +41,24 @@
 
 
 var compress = function (chars) {
-    var i = 1,  //从第二个字符开始循环
-        count,  //字符计数
-        temp
-    while (i < chars.length) {
-        count = 1
-        while (chars[i] === chars[i - 1]) { //字符重复时计数累加，并删除字符
-            chars.splice(i, 1)
-            count++
-        }
-        if (count > 1) {
-            temp = i
-            while (count) {   //将计数数字按位插入
-                chars.splice(temp, 0, count % 10 + '')
-                count = Math.floor(count / 10)
-                i++
-            }
-        }
-        i++ //移动到新字符的下一个字符位置
+  var i = 1, //从第二个字符开始循环
+    count, //字符计数
+    temp
+  while (i < chars.length) {
+    count = 1
+    while (chars[i] === chars[i - 1]) { //字符重复时计数累加，并删除字符
+      chars.splice(i, 1)
+      count++
     }
-    return chars.length
+    if (count > 1) {
+      temp = i
+      while (count) { //将计数数字按位插入 注意这里的数字可能有多位
+        chars.splice(temp, 0, count % 10 + '')
+        count = Math.floor(count / 10)
+        i++
+      }
+    }
+    i++ //移动到新字符的下一个字符位置
+  }
+  return chars.length
 }

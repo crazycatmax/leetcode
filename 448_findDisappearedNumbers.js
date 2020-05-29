@@ -1,4 +1,4 @@
-/* 448. 找到所有数组中消失的数字
+/* 448_findDisappearedNumbers 找到所有数组中消失的数字
 
 给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。
 找到所有在 [1, n] 范围之间没有出现在数组中的数字。
@@ -13,14 +13,14 @@
 
 
 var findDisappearedNumbers = function (nums) {
-    var i,
-        count = 0
-    for (i = 0; i < nums.length; i++) {
-        nums[Math.abs(nums[i]) - 1] = -Math.abs(nums[Math.abs(nums[i]) - 1])
-    }
-    for (i = 0; i < nums.length; i++) {
-        if (nums[i] > 0) nums[count++] = i + 1
-    }
-    nums.length = count
-    return nums
+  var i,
+    count = 0
+  for (i = 0; i < nums.length; i++) {
+    nums[Math.abs(nums[i]) - 1] = -Math.abs(nums[Math.abs(nums[i]) - 1])
+  }
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) nums[count++] = i + 1
+  }
+  nums.length = count
+  return nums
 };

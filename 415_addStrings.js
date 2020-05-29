@@ -1,4 +1,5 @@
-/* 415. 字符串相加
+/* 415_addStrings 字符串相加
+
 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
 
 注意：
@@ -9,6 +10,7 @@ num1 和num2 都不包含任何前导零。
 
 
 
+// 按位处理，转换字符为数字
 var addStrings = function (num1, num2) {
     var i = num1.length - 1,
         j = num2.length - 1,

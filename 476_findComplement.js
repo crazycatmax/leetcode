@@ -1,4 +1,4 @@
-/* 476. 数字的补数
+/* 476_findComplement 数字的补数
 
 给定一个正整数，输出它的补数。补数是对该数的二进制表示取反。
 
@@ -18,11 +18,12 @@
 
 
 
+// 借助栈
 var findComplement = function (num) {
     var i,
         stack = []
     while (num) {
-        stack.push((num & 1) ^ 1)
+        stack.push((num & 1) ^ 1) //获取二进制数末尾值 再通过异或操作取反
         num >>= 1
     }
     while (stack.length) {
