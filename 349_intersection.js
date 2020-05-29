@@ -1,4 +1,4 @@
-/* 349. 两个数组的交集
+/* 349_intersection 两个数组的交集
 
 给定两个数组，编写一个函数来计算它们的交集。
 
@@ -21,9 +21,11 @@ var intersection = function (nums1, nums2) {
     var arr = nums1.filter(t => nums2.includes(t))
     return Array.from(new Set(arr))
 };
-// 数组方法 优化1
+
+// 数组方法 简化
 var intersection2 = function (nums1, nums2) {
     return Array.from(new Set(nums1.filter(t => nums2.includes(t))))
 };
-// 数组方法 优化2
+
+// 数组方法 简化2
 var intersection3 = (nums1, nums2) => Array.from(new Set(nums1.filter(t => nums2.includes(t))))

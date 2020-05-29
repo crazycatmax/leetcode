@@ -1,4 +1,4 @@
-/* 350. 两个数组的交集 II
+/* 350_intersect 两个数组的交集 II
 
 给定两个数组，编写一个函数来计算它们的交集。
 
@@ -28,7 +28,7 @@ var intersect = function (nums1, nums2) {
         count = 0
     for (i = 0; i < nums1.length; i++) {
         var pos = nums2.indexOf(nums1[i])
-        if (pos > -1) 
+        if (pos > -1)
             nums1[count++] = nums2.splice(nums2.indexOf(nums1[i]), 1)[0]
     }
     nums1.length = count
