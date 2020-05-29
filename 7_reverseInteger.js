@@ -31,7 +31,7 @@ var reverse = function (x) {
 }
 
 //  遍历整数每一位，逆序求和
-var reverse2 = function (x) {
+var reverse = function (x) {
     var negative = x < 0,
         res = 0
     x = Math.abs(x)
@@ -44,7 +44,7 @@ var reverse2 = function (x) {
 }
 
 //  递归
-var reverse3 = function (x) {
+var reverse = function (x) {
     var negative = x < 0,
         res
     if (x === 0) return 0
@@ -60,7 +60,7 @@ var reverse3 = function (x) {
 }
 
 //  尾递归
-var reverse4 = function (x) {
+var reverse = function (x) {
     var negative = x < 0,
         res
     if (x === 0) return 0

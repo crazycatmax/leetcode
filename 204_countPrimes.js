@@ -30,7 +30,7 @@ var countPrimes = function (n) {
 }
 
 // Sieve of Eratosthenes算法
-var countPrimes2 = function (n) {
+var countPrimes = function (n) {
   var i,
     j,
     count = 0,

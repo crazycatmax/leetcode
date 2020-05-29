@@ -23,9 +23,9 @@ var intersection = function (nums1, nums2) {
 };
 
 // 数组方法 简化
-var intersection2 = function (nums1, nums2) {
+var intersection = function (nums1, nums2) {
     return Array.from(new Set(nums1.filter(t => nums2.includes(t))))
 };
 
 // 数组方法 简化2
-var intersection3 = (nums1, nums2) => Array.from(new Set(nums1.filter(t => nums2.includes(t))))
+var intersection = (nums1, nums2) => Array.from(new Set(nums1.filter(t => nums2.includes(t))))

@@ -38,6 +38,6 @@ var isHappy = function (n) {
 }
 
 // 递归
-var isHappy2 = function (n) {
+var isHappy = function (n) {
 
 }

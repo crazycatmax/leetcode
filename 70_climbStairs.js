@@ -46,7 +46,7 @@ var climbStairs = function (n) {
 }
 
 //  尾递归
-var climbStairs2 = function (n) {
+var climbStairs = function (n) {
 	function recursion(m, acc, cur) {
 		if (1 === m) return cur
 		if (2 === m) return acc
@@ -56,7 +56,7 @@ var climbStairs2 = function (n) {
 }
 
 //  迭代法
-var climbStairs3 = function (n) {
+var climbStairs = function (n) {
 	var i, acc = 2,
 		cur = 1
 	if (1 === n) return cur

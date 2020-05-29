@@ -29,7 +29,7 @@ var containsDuplicate = function (nums) {
 }
 
 // set集合去重 通过元素个数判断
-var containsDuplicate2 = function (nums) {
+var containsDuplicate = function (nums) {
   const tmpSet = new Set(nums);
   return tmpSet.size !== nums.length;
 }

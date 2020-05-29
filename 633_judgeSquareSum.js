@@ -28,7 +28,7 @@ var judgeSquareSum = function (c) {
 }
 
 // 双指针
-var judgeSquareSum2 = function (c) {
+var judgeSquareSum = function (c) {
     var i,
         j,
         temp,

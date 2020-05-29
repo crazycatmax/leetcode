@@ -21,7 +21,7 @@ var singleNumber = function (nums) {
 };
 
 // 暴力循环
-var singleNumber2 = function (nums) {
+var singleNumber = function (nums) {
   var i, j
   for (i = 0; i < nums.length; i++) {
     for (j = 0; j < nums.length; j++) {
@@ -34,7 +34,7 @@ var singleNumber2 = function (nums) {
 };
 
 // 排序 找出不等于前后元素的元素
-var singleNumber3 = function (nums) {
+var singleNumber = function (nums) {
   nums.sort((a, b) => a - b)
   if (nums[0] !== nums[1]) return nums[0]
   if (nums[nums.length - 1] !== nums[nums.length - 2]) return nums[nums.length - 1]
@@ -42,7 +42,7 @@ var singleNumber3 = function (nums) {
 }
 
 // 异或运算^  x^x=0 x^0=x
-var singleNumber4 = function (nums) {
+var singleNumber = function (nums) {
   var res, num
   for (num of nums) {
     res ^= num

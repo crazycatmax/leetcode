@@ -38,7 +38,7 @@ var reverseVowels = function (s) {
 }
 
 // 栈 优化
-var reverseVowels2 = function (s) {
+var reverseVowels = function (s) {
     var v = [],
         arr = s.split('')
     arr.forEach(item => 'aeiouAEIOU'.includes(item) && v.push(item))
@@ -46,7 +46,7 @@ var reverseVowels2 = function (s) {
 }
 
 // 左右指针
-var reverseVowels3 = function (s) {
+var reverseVowels = function (s) {
     var l = 0,
         r = s.length - 1,
         temp,

@@ -39,7 +39,7 @@ var plusOne = function (digits) {
 
 
 // 对if-else优化
-var plusOne2 = function (digits) {
+var plusOne = function (digits) {
   var i,
     add = false
   digits[digits.length - 1]++

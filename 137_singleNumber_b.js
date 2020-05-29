@@ -20,7 +20,7 @@ var singleNumber = function (nums) {
 };
 
 // 暴力循环
-var singleNumber2 = function (nums) {
+var singleNumber = function (nums) {
   var i, j
   for (i = 0; i < nums.length; i++) {
     for (j = 0; j < nums.length; j++) {

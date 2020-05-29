@@ -21,7 +21,7 @@ var lsPalindrome = function (s) {
 };
 
 // 遍历，双指针
-var isPalindrome2 = function (s) {
+var isPalindrome = function (s) {
 	s = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
 	var l, r
 	for (l = 0, r = s.length - 1; l < r; l++, r--) {

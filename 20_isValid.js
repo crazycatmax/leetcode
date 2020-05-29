@@ -49,7 +49,7 @@ var isValid = function (s) {
 
 
 // 
-var isValid2 = function (s) {
+var isValid = function (s) {
   var i,
     stack = [],
     couple = {

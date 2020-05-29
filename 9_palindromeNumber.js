@@ -27,7 +27,7 @@ var isPalindrome = function (x) {
 }
 
 //  递归
-var isPalindrome2 = function (x) {
+var isPalindrome = function (x) {
     function recursion(s) { //定义内部函数，递归标准用法
         s = s.toString()
         var len = s.length
@@ -38,7 +38,7 @@ var isPalindrome2 = function (x) {
 }
 
 //  尾递归
-var isPalindrome3 = function (x) {
+var isPalindrome = function (x) {
     function recursion(s, bool) {  //尾递归用法，添加额外参数
         if (bool === undefined) bool = true
         s = s.toString()
@@ -50,7 +50,7 @@ var isPalindrome3 = function (x) {
 }
 
 //  直接处理数字
-var isPalindrome4 = function (x) {
+var isPalindrome = function (x) {
     var res = 0,
         init = x
     if (x < 0) return false

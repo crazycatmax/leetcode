@@ -48,7 +48,7 @@ var countAndSay = function (n) {
 }
 
 // 方法2  迭代法  todo
-// var countAndSay2 = function (n) {
+// var countAndSay = function (n) {
 //   var i,
 //     j,
 //     s,

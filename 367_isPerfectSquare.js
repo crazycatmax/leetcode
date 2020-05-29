@@ -26,7 +26,7 @@ var isPerfectSquare = function (num) {
 }
 
 // 数学公式
-var isPerfectSquare2 = function (num) {
+var isPerfectSquare = function (num) {
     var i = 1,
         temp = 0
     while (1) {
@@ -38,12 +38,12 @@ var isPerfectSquare2 = function (num) {
 }
 
 //  **幂运算
-var isPerfectSquare3 = function (num) {
+var isPerfectSquare = function (num) {
     return num ** .5 % 1 === 0
 }
 
 //  数学公式 n*n = 1+3+...+2n-1
-var isPerfectSquare4 = function (num) {
+var isPerfectSquare = function (num) {
     var i
     for (i = 1; i < 2 * num; i += 2) {
         num -= i
@@ -53,7 +53,7 @@ var isPerfectSquare4 = function (num) {
 }
 
 //  二分模板
-var isPerfectSquare5 = function (num) {
+var isPerfectSquare = function (num) {
     var l = 0,
         r = num,
         hash = {},

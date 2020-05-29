@@ -37,7 +37,7 @@ var addDigits = function (num) {
 
     所以各位相加的结果模9 === 原数字模9
 */
-var addDigits2 = function (num) {
+var addDigits = function (num) {
   if (num < 1) return 0
   return num % 9 ? num % 9 : 9
 }

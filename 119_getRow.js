@@ -35,7 +35,7 @@ var getRow = function (rowIndex) {
 //   **
 //  ***
 // ****
-var getRow2 = function (rowIndex) {
+var getRow = function (rowIndex) {
 	let resultArr = [1];
 	for (let i = 0; i < rowIndex; i++) {
 		resultArr.unshift(0);
@@ -47,7 +47,7 @@ var getRow2 = function (rowIndex) {
 };
 
 // 递归
-var getRow3 = function (rowIndex) {
+var getRow = function (rowIndex) {
 	function recursion(n) {
 		if (n === 0) return [1]
 		if (n === 1) return [1, 1]

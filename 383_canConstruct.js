@@ -34,7 +34,7 @@ var canConstruct = function (ransomNote, magazine) {
 }
 
 // 通过 ascii码 来计数
-var canConstruct2 = function (ransomNote, magazine) {
+var canConstruct = function (ransomNote, magazine) {
   var i,
     hash = Array.from({ length: 26 }),
     trans = c => c.codePointAt(0)

@@ -27,7 +27,7 @@ var twoSum = function (nums, target) {
 };
 
 // map集合，key值存储数据元素，value存储下标index
-var twoSum2 = function (nums, target) {
+var twoSum = function (nums, target) {
     var m = new Map()
     var dif
     for (var i = 0; i < nums.length; i++) {
@@ -40,7 +40,7 @@ var twoSum2 = function (nums, target) {
 }
 
 // 数组，value存储下标index
-var twoSum3 = function (nums, target) {
+var twoSum = function (nums, target) {
     var arr = [];
     for (var i = 0; i < nums.length; i++) {
         var dif = target - nums[i];

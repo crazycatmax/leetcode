@@ -24,6 +24,7 @@ var findMaxConsecutiveOnes = function (nums) {
   return max
 };
 
+// 遍历一遍
 var findMaxConsecutiveOnes = function (nums) {
   var i,
     count = 0,
@@ -40,7 +41,7 @@ var findMaxConsecutiveOnes = function (nums) {
   return max
 };
 
-// 遍历一遍
+// 遍历一遍 优化
 var findMaxConsecutiveOnes = function (nums) {
   var i,
     j = 0,

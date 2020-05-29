@@ -28,7 +28,7 @@ var numJewelsInStones = function (J, S) {
 }
 
 // for of
-var numJewelsInStones2 = function (J, S) {
+var numJewelsInStones = function (J, S) {
     var i,
         count = 0
     for (i of S) {
@@ -38,15 +38,15 @@ var numJewelsInStones2 = function (J, S) {
 };
 
 // filter
-var numJewelsInStones3 = function (J, S) {
+var numJewelsInStones = function (J, S) {
     return S.split('').filter(el => J.includes(el)).length
 }
 
 // reduce
-var numJewelsInStones4 = function (J, S) {
+var numJewelsInStones = function (J, S) {
     return Array.from(S).reduce((acc, cur) => {
         return J.includes(cur) ? acc + 1 : acc
     }, 0)
 }
 
-var numJewelsInStones4 = (J, S) => Array.from(S).reduce((acc, cur) => (J.includes(cur) ? acc + 1 : acc), 0)
+var numJewelsInStones = (J, S) => Array.from(S).reduce((acc, cur) => (J.includes(cur) ? acc + 1 : acc), 0)

@@ -42,7 +42,7 @@ var longestPalindrome = function (s) {
 }
 
 // 数组
-var longestPalindrome2 = function (s) {
+var longestPalindrome = function (s) {
     var i,
         arr = [],
         len = 0,
@@ -67,7 +67,7 @@ var longestPalindrome2 = function (s) {
 }
 
 // 哈希表2
-var longestPalindrome3 = function (s) {
+var longestPalindrome = function (s) {
     var i,
         len = 0,
         hash = {}

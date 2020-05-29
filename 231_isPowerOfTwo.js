@@ -31,7 +31,7 @@ var isPowerOfTwo = function (n) {
 };
 
 // 利用 2幂次方的特点 1000-1 => 111
-var isPowerOfTwo2 = function (n) {
+var isPowerOfTwo = function (n) {
   if (n <= 0) return false;
   if ((n & n - 1) === 0) return true;
   return false;

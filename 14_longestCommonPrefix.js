@@ -33,7 +33,7 @@ var longestCommonPrefix = function (strs) {
 };
 
 // 字符串-数组方法
-var longestCommonPrefix2 = function (strs) {
+var longestCommonPrefix = function (strs) {
   var i,
     j,
     head = strs[0]

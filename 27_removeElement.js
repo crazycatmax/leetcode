@@ -44,7 +44,7 @@ var removeElement = function (nums, val) {
 };
 
 // 同上，循环条件nums.length动态变化
-var removeElement2 = function (nums, val) {
+var removeElement = function (nums, val) {
   for (var i = 0; i < nums.length; i++) {
     if (val === nums[i]) {
       nums.splice(i, 1)
@@ -55,7 +55,7 @@ var removeElement2 = function (nums, val) {
 };
 
 // 快慢指针
-var removeElement3 = function (nums, val) {
+var removeElement = function (nums, val) {
   var i, k = 0
   for (i = 0; i < nums.length; i++) {
     if (val !== nums[i]) {
@@ -66,7 +66,7 @@ var removeElement3 = function (nums, val) {
 };
 
 // es6 数组过滤方法 filter
-var removeElement4 = function (nums, val) {
+var removeElement = function (nums, val) {
   nums = nums.filter(t => t !== val)
   return nums.length
 };

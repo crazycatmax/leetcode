@@ -46,7 +46,7 @@ var lengthOfLongestSubstring = function (s) {
 };
 
 // 数组-动态最短字串
-var lengthOfLongestSubstring2 = function (s) {
+var lengthOfLongestSubstring = function (s) {
     var i,
         c,
         index,
