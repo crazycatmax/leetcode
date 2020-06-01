@@ -37,9 +37,8 @@ var fib = function (N) {
 var fib = function (N) {
 	var cache = {}
 	function recur(n) {
-		if (cache[n]) return cache[n]
 		if (n < 2) return n
-		return cache[n] = recur(n - 1) + recur(n - 2)
+		return cache[n] || (cache[n] = recur(n - 1) + recur(n - 2))
 	}
 	return recur(N)
 };
