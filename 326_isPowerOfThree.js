@@ -24,13 +24,13 @@
 
 // 正则表达式 三进制转换
 var isPowerOfThree = function (n) {
-  return /^10*$/.test(n.toString(3))
+    return /^10*$/.test(n.toString(3))
 };
 
 var isPowerOfThree = function (n) {
-  if (n < 1) return false
-  while (n % 3 === 0) {
-    n /= 3
-  }
-  return n === 1
+    if (n < 1) return false
+    while (n % 3 === 0) {
+        n /= 3
+    }
+    return n === 1
 };

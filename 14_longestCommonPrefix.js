@@ -19,29 +19,29 @@
 
 // 暴力循环
 var longestCommonPrefix = function (strs) {
-  var i,
-    j,
-    head = strs[0]
-  if (!head) return ''
-  for (i = 0; i < head.length; i++) {
-    for (j = 1; j < strs.length; j++) {
-      if (strs[j][i] !== head[i]) 
-        return head.slice(0, i)
+    var i,
+        j,
+        head = strs[0]
+    if (!head) return ''
+    for (i = 0; i < head.length; i++) {
+        for (j = 1; j < strs.length; j++) {
+            if (strs[j][i] !== head[i])
+                return head.slice(0, i)
+        }
     }
-  }
-  return head
+    return head
 };
 
 // 字符串-数组方法
 var longestCommonPrefix = function (strs) {
-  var i,
-    j,
-    head = strs[0]
-  if (!head) 
-    return ''
-  for (i = 0; i < head.length; i++) {
-    if (strs.some(t => !t.startsWith(head.slice(0, i + 1)))) 
-      return head.slice(0, i)
-  }
-  return head
+    var i,
+        j,
+        head = strs[0]
+    if (!head)
+        return ''
+    for (i = 0; i < head.length; i++) {
+        if (strs.some(t => !t.startsWith(head.slice(0, i + 1))))
+            return head.slice(0, i)
+    }
+    return head
 };

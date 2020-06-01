@@ -41,24 +41,24 @@
 
 
 var compress = function (chars) {
-  var i = 1, //从第二个字符开始循环
-    count, //字符计数
-    temp
-  while (i < chars.length) {
-    count = 1
-    while (chars[i] === chars[i - 1]) { //字符重复时计数累加，并删除字符
-      chars.splice(i, 1)
-      count++
+    var i = 1, //从第二个字符开始循环
+        count, //字符计数
+        temp
+    while (i < chars.length) {
+        count = 1
+        while (chars[i] === chars[i - 1]) { //字符重复时计数累加，并删除字符
+            chars.splice(i, 1)
+            count++
+        }
+        if (count > 1) {
+            temp = i
+            while (count) { //将计数数字按位插入 注意这里的数字可能有多位
+                chars.splice(temp, 0, count % 10 + '')
+                count = Math.floor(count / 10)
+                i++
+            }
+        }
+        i++ //移动到新字符的下一个字符位置
     }
-    if (count > 1) {
-      temp = i
-      while (count) { //将计数数字按位插入 注意这里的数字可能有多位
-        chars.splice(temp, 0, count % 10 + '')
-        count = Math.floor(count / 10)
-        i++
-      }
-    }
-    i++ //移动到新字符的下一个字符位置
-  }
-  return chars.length
+    return chars.length
 }

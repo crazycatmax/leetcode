@@ -17,14 +17,14 @@
 
 // 求的每一个数与最小数的差值，对差求和
 var minMoves = function (nums) {
-  var i,
-    min = nums[0],
-    sum = 0
-  for (i = 1; i < nums.length; i++) {
-    if (nums[i] < min) min = nums[i]
-  }
-  for (i = 0; i < nums.length; i++) {
-    sum += nums[i] - min
-  }
-  return sum
+    var i,
+        min = nums[0],
+        sum = 0
+    for (i = 1; i < nums.length; i++) {
+        if (nums[i] < min) min = nums[i]
+    }
+    for (i = 0; i < nums.length; i++) {
+        sum += nums[i] - min
+    }
+    return sum
 }

@@ -15,20 +15,20 @@
 
 // 借助对象
 var majorityElement = function (nums) {
-  var i, o = {}
-  for (i = 0; i< nums.length; i++) {
-    if (!o[nums[i]]) {
-      o[nums[i]] = 1
-    } else {
-      o[nums[i]]++
+    var i, o = {}
+    for (i = 0; i < nums.length; i++) {
+        if (!o[nums[i]]) {
+            o[nums[i]] = 1
+        } else {
+            o[nums[i]]++
+        }
+        if (o[nums[i]] > Math.floor(nums.length / 2)) return nums[i]
     }
-    if (o[nums[i]] > Math.floor(nums.length / 2)) return nums[i]
-  }
-  return
+    return
 };
 
 // 排序后取中间值
 var majorityElement = function (nums) {
-  nums.sort((a, b) => a - b)
-  return nums[Math.floor(nums.length / 2)]
+    nums.sort((a, b) => a - b)
+    return nums[Math.floor(nums.length / 2)]
 };

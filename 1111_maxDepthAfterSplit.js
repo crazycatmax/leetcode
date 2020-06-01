@@ -53,30 +53,30 @@ answer[i] = 1，seq[i] 分给 B 。
 
 // 借助两个栈,分别存储左右括号-(- -)-
 var maxDepthAfterSplit = function (seq) {
-  var i = 0,
-    ska = [],
-    skb = [],
-    arr = Array.from(seq),
-    len = arr.length
-  while (i < len) {
-    if (arr[i] === '(') {
-      if (ska.length === skb.length) {
-        ska.push('(')
-        arr[i] = 0
-      } else {
-        skb.push('(')
-        arr[i] = 1
-      }
-    } else {
-      if (ska.length === skb.length) {
-        skb.pop()
-        arr[i] = 1
-      } else {
-        ska.pop()
-        arr[i] = 0
-      }
+    var i = 0,
+        ska = [],
+        skb = [],
+        arr = Array.from(seq),
+        len = arr.length
+    while (i < len) {
+        if (arr[i] === '(') {
+            if (ska.length === skb.length) {
+                ska.push('(')
+                arr[i] = 0
+            } else {
+                skb.push('(')
+                arr[i] = 1
+            }
+        } else {
+            if (ska.length === skb.length) {
+                skb.pop()
+                arr[i] = 1
+            } else {
+                ska.pop()
+                arr[i] = 0
+            }
+        }
+        i++
     }
-    i++
-  }
-  return arr
+    return arr
 }

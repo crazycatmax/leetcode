@@ -18,47 +18,47 @@
 
 // dfs 暴力回溯
 var letterCombinations = function (digits) {
-  var res = [],
-    len = 0,
-    hash = [, , 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
-  if (digits.length < 1) return res
+    var res = [],
+        len = 0,
+        hash = [, , 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+    if (digits.length < 1) return res
 
-  function dfs(inputs, str, index, len, res) {
-    if (index === len) {
-      res.push(str)
-      return
+    function dfs(inputs, str, index, len, res) {
+        if (index === len) {
+            res.push(str)
+            return
+        }
+        for (var c of hash[Number(inputs[index])].split('')) {
+            str += c
+            dfs(inputs, str, index + 1, len, res)
+            str = str.slice(0, str.length - 1)
+        }
     }
-    for (var c of hash[Number(inputs[index])].split('')) {
-      str += c
-      dfs(inputs, str, index + 1, len, res)
-      str = str.slice(0, str.length - 1)
-    }
-  }
-  dfs(digits, '', 0, digits.length, res)
-  return res
+    dfs(digits, '', 0, digits.length, res)
+    return res
 };
 
 // 动态规划
 var letterCombinations = function (digits) {
-  var i,
-    j,
-    l = digits.length,
-    res = [], //当前状态集合
-    temp = [],  //变化后的状态集合
-    str = '',
-    hash = [, , 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
-  if (l < 1) return []
-  temp = Array.from(hash[Number(digits[0])])
-  res = [...temp]
-  for (i = 1; i < l; i++) {
-    temp.length = 0
-    for (j = 0; j < res.length; j++) {
-      str = hash[Number(digits[i])]
-      for (k = 0; k < str.length; k++) {
-        temp.push(res[j] + str[k])
-      }
-    }
+    var i,
+        j,
+        l = digits.length,
+        res = [], //当前状态集合
+        temp = [], //变化后的状态集合
+        str = '',
+        hash = [, , 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+    if (l < 1) return []
+    temp = Array.from(hash[Number(digits[0])])
     res = [...temp]
-  }
-  return res
+    for (i = 1; i < l; i++) {
+        temp.length = 0
+        for (j = 0; j < res.length; j++) {
+            str = hash[Number(digits[i])]
+            for (k = 0; k < str.length; k++) {
+                temp.push(res[j] + str[k])
+            }
+        }
+        res = [...temp]
+    }
+    return res
 };

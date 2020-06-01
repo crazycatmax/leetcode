@@ -26,25 +26,25 @@
 
 //  递归法
 var countAndSay = function (n) {
-  function recursion(t) {
-    var i,
-      count = 0,
-      str = '',
-      s
-    if (t == 1) return '1'
-    if (t == 2) return '11'
-    s = recursion(t - 1)
-    for (i = 0; i < s.length - 1; i++) {
-      count++
-      if (s[i] !== s[i + 1]) {
-        str += `${count}${s[i]}`
-        count = 0
-      }
+    function recursion(t) {
+        var i,
+            count = 0,
+            str = '',
+            s
+        if (t == 1) return '1'
+        if (t == 2) return '11'
+        s = recursion(t - 1)
+        for (i = 0; i < s.length - 1; i++) {
+            count++
+            if (s[i] !== s[i + 1]) {
+                str += `${count}${s[i]}`
+                count = 0
+            }
+        }
+        str += `${count+1}${s[i]}`
+        return str
     }
-    str += `${count+1}${s[i]}`
-    return str
-  }
-  return recursion(n)
+    return recursion(n)
 }
 
 // 方法2  迭代法  todo

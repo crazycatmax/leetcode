@@ -23,23 +23,23 @@
 
 // s和t分别作为映射的源，遍历两次
 var isIsomorphic = function (s, t) {
-  var i,
-    m = {},
-    len = s.length
-  for (i = 0; i < len; i++) {
-    if (!m[s[i]]) { //不存在映射，则添加
-      m[s[i]] = t[i]
-    } else { //存在映射，则判断是否相等
-      if (m[s[i]] !== t[i]) return false
+    var i,
+        m = {},
+        len = s.length
+    for (i = 0; i < len; i++) {
+        if (!m[s[i]]) { //不存在映射，则添加
+            m[s[i]] = t[i]
+        } else { //存在映射，则判断是否相等
+            if (m[s[i]] !== t[i]) return false
+        }
     }
-  }
-  m = {}
-  for (i = 0; i < len; i++) {
-    if (!m[t[i]]) { //不存在映射，则添加
-      m[t[i]] = s[i]
-    } else { //存在映射，则判断是否相等
-      if (m[t[i]] !== s[i]) return false
+    m = {}
+    for (i = 0; i < len; i++) {
+        if (!m[t[i]]) { //不存在映射，则添加
+            m[t[i]] = s[i]
+        } else { //存在映射，则判断是否相等
+            if (m[t[i]] !== s[i]) return false
+        }
     }
-  }
-  return true
+    return true
 }

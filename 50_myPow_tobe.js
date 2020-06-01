@@ -21,6 +21,6 @@ n 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。 */
 
 
 // 投机取巧
-var myPow = function(x, n) {
-  return x**n
+var myPow = function (x, n) {
+    return x ** n
 };

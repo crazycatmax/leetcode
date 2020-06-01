@@ -14,64 +14,64 @@
 
 // 
 var moveZeroes = function (nums) {
-  var i,
-    j,
-    len = nums.length
-  for (i = 0; i < len; i++) {
-    if (!nums[i]) {
-      for (j = i; j < nums.length - 1; j++) {
-        nums[j] = nums[j + 1]
-      }
-      nums[j] = 0
-      i--
-      len--
+    var i,
+        j,
+        len = nums.length
+    for (i = 0; i < len; i++) {
+        if (!nums[i]) {
+            for (j = i; j < nums.length - 1; j++) {
+                nums[j] = nums[j + 1]
+            }
+            nums[j] = 0
+            i--
+            len--
+        }
     }
-  }
-  return nums
+    return nums
 };
 
 var moveZeroes = function (nums) {
-  var i,
-    j,
-    count = 0
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i] === 0) {
-      nums.splice(i, 1)
-      nums.push(0)
-      i--
-      if (++count === nums.length) break
+    var i,
+        j,
+        count = 0
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            nums.splice(i, 1)
+            nums.push(0)
+            i--
+            if (++count === nums.length) break
+        }
     }
-  }
-  return nums
+    return nums
 };
 
 var moveZeroes = function (nums) {
-  var i,
-    count = 0
-  for (i = 0; i < nums.length; i++) {
-    if (!nums[i]) {
-      count++
-      nums.splice(i, 1)
-      i--
+    var i,
+        count = 0
+    for (i = 0; i < nums.length; i++) {
+        if (!nums[i]) {
+            count++
+            nums.splice(i, 1)
+            i--
+        }
     }
-  }
-  while (count--) {
-    nums.push(0)
-  }
-  return nums
+    while (count--) {
+        nums.push(0)
+    }
+    return nums
 };
 
 // 双指针
 var moveZeroes = function (nums) {
-  var i,
-    j = 0
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i]) {
-      nums[j++] = nums[i]
+    var i,
+        j = 0
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i]) {
+            nums[j++] = nums[i]
+        }
     }
-  }
-  for (i = j; i < nums.length; i++) {
-    nums[i] = 0
-  }
-  return nums
+    for (i = j; i < nums.length; i++) {
+        nums[i] = 0
+    }
+    return nums
 };

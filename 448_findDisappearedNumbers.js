@@ -13,14 +13,14 @@
 
 
 var findDisappearedNumbers = function (nums) {
-  var i,
-    count = 0
-  for (i = 0; i < nums.length; i++) {
-    nums[Math.abs(nums[i]) - 1] = -Math.abs(nums[Math.abs(nums[i]) - 1])
-  }
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i] > 0) nums[count++] = i + 1
-  }
-  nums.length = count
-  return nums
+    var i,
+        count = 0
+    for (i = 0; i < nums.length; i++) {
+        nums[Math.abs(nums[i]) - 1] = -Math.abs(nums[Math.abs(nums[i]) - 1])
+    }
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) nums[count++] = i + 1
+    }
+    nums.length = count
+    return nums
 };

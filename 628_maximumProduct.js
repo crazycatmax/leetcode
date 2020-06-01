@@ -18,11 +18,11 @@
 
 // 考虑负数  (min1*min2*max1)  (max1*max2*max3)
 var maximumProduct = function (nums) {
-  var len = nums.length
-  nums.sort((a, b) => a - b)
+    var len = nums.length
+    nums.sort((a, b) => a - b)
 
-  const a = nums[len - 1] * nums[len - 2] * nums[len - 3]
-  const b = nums[0] * nums[1] * nums[len - 1]
+    const a = nums[len - 1] * nums[len - 2] * nums[len - 3]
+    const b = nums[0] * nums[1] * nums[len - 1]
 
-  return Math.max(a, b)
+    return Math.max(a, b)
 };

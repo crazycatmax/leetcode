@@ -16,20 +16,19 @@
  * }
  */
 var removeElements = function (head, val) {
-  let newHead = new ListNode(null),
-    prev = newHead,
-    curr = head;
-  newHead.next = head;  //哨兵节点
+    let newHead = new ListNode(null),
+        prev = newHead,
+        curr = head;
+    newHead.next = head; //哨兵节点
 
-  while (curr) {
-    if (curr.val === val) {
-      prev.next = curr.next;
-      curr = prev.next;
+    while (curr) {
+        if (curr.val === val) {
+            prev.next = curr.next;
+            curr = prev.next;
+        } else {
+            prev = curr;
+            curr = curr.next;
+        }
     }
-    else {
-      prev = curr;
-      curr = curr.next;
-    }
-  }
-  return newHead.next
+    return newHead.next
 }

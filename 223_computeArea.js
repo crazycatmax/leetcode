@@ -13,10 +13,10 @@ Rectangle Area
 
 // 通过min max函数计算
 var computeArea = function (A, B, C, D, E, F, G, H) {
-  var overlap,    //重叠面积
-    sumArea = (C - A) * (D - B) + (G - E) * (H - F)
-  if (E >= C || A >= G || B >= H || F >= D)
-    return sumArea
-  overlap = (Math.min(C, G) - Math.max(A, E)) * (Math.min(D, H) - Math.max(B, F))
-  return sumArea - overlap
+    var overlap, //重叠面积
+        sumArea = (C - A) * (D - B) + (G - E) * (H - F)
+    if (E >= C || A >= G || B >= H || F >= D)
+        return sumArea
+    overlap = (Math.min(C, G) - Math.max(A, E)) * (Math.min(D, H) - Math.max(B, F))
+    return sumArea - overlap
 };

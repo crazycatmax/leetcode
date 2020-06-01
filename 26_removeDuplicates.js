@@ -31,27 +31,27 @@ for (int i = 0; i < len; i++) {
 
 // splice删除重复项
 var removeDuplicates = function (nums) {
-  var i
-  for (i = 0; i < nums.length - 1; i++) {
-    if (nums[i] === nums[i + 1]) {
-      nums.splice(i, 1)
-      i--
+    var i
+    for (i = 0; i < nums.length - 1; i++) {
+        if (nums[i] === nums[i + 1]) {
+            nums.splice(i, 1)
+            i--
+        }
     }
-  }
-  return nums.length
+    return nums.length
 };
 
 //  快慢指针
 var removeDuplicates = function (nums) {
-  var i,
-    j,
-    len = nums.length
-  if (len < 2) return len
-  for (i = 0, j = 0; i < len - 1; i++) {
-    if (nums[i] !== nums[i + 1]) {  //遇到重复项，移动慢指针
-      nums[j++] = nums[i]
+    var i,
+        j,
+        len = nums.length
+    if (len < 2) return len
+    for (i = 0, j = 0; i < len - 1; i++) {
+        if (nums[i] !== nums[i + 1]) { //遇到重复项，移动慢指针
+            nums[j++] = nums[i]
+        }
     }
-  }
-  nums[j++] = nums[i]
-  return j
+    nums[j++] = nums[i]
+    return j
 };

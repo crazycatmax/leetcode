@@ -22,61 +22,61 @@ trie.search("app");     // 返回 true
  * Initialize your data structure here.
  */
 var TrieNode = function (val) {
-  this.val = val
-  this.next = {}
-  this.isEnding = false
+    this.val = val
+    this.next = {}
+    this.isEnding = false
 }
 
 var Trie = function () {
-  this.root = new TrieNode('/')
+    this.root = new TrieNode('/')
 };
 
 /**
-* Inserts a word into the trie. 
-* @param {string} word
-* @return {void}
-*/
+ * Inserts a word into the trie. 
+ * @param {string} word
+ * @return {void}
+ */
 Trie.prototype.insert = function (word) {
-  var p = this.root
-  for (let c of word) {
-      if (!p.next[c]) p.next[c] = new TrieNode()
-      p = p.next[c]
-  }
-  p.isEnding = true
+    var p = this.root
+    for (let c of word) {
+        if (!p.next[c]) p.next[c] = new TrieNode()
+        p = p.next[c]
+    }
+    p.isEnding = true
 }
 
 /**
-* Returns if the word is in the trie. 
-* @param {string} word
-* @return {boolean}
-*/
+ * Returns if the word is in the trie. 
+ * @param {string} word
+ * @return {boolean}
+ */
 Trie.prototype.search = function (word) {
-  var p = this.root
-  for (let c of word) {
-      if (!p.next[c]) return false
-      p = p.next[c]
-  }
-  return p.isEnding
+    var p = this.root
+    for (let c of word) {
+        if (!p.next[c]) return false
+        p = p.next[c]
+    }
+    return p.isEnding
 };
 
 /**
-* Returns if there is any word in the trie that starts with the given prefix. 
-* @param {string} prefix
-* @return {boolean}
-*/
+ * Returns if there is any word in the trie that starts with the given prefix. 
+ * @param {string} prefix
+ * @return {boolean}
+ */
 Trie.prototype.startsWith = function (prefix) {
-  var p = this.root
-  for (let c of prefix) {
-      if (!p.next[c]) return false
-      p = p.next[c]
-  }
-  return true
+    var p = this.root
+    for (let c of prefix) {
+        if (!p.next[c]) return false
+        p = p.next[c]
+    }
+    return true
 };
 
 /**
-* Your Trie object will be instantiated and called as such:
-* var obj = new Trie()
-* obj.insert(word)
-* var param_2 = obj.search(word)
-* var param_3 = obj.startsWith(prefix)
-*/
+ * Your Trie object will be instantiated and called as such:
+ * var obj = new Trie()
+ * obj.insert(word)
+ * var param_2 = obj.search(word)
+ * var param_3 = obj.startsWith(prefix)
+ */

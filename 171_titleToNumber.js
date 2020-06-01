@@ -29,11 +29,11 @@
 
 //  关键点 1-26 => 0-25
 var titleToNumber = function (s) {
-  var letterStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    arr = s.split(''),
-    sum = 0
-  while (arr.length > 0) {
-    sum = sum * 26 + letterStr.indexOf(arr.shift()) + 1
-  }
-  return sum
+    var letterStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        arr = s.split(''),
+        sum = 0
+    while (arr.length > 0) {
+        sum = sum * 26 + letterStr.indexOf(arr.shift()) + 1
+    }
+    return sum
 }

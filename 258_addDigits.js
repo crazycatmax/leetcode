@@ -14,16 +14,16 @@
 
 // 对每位数字求和
 var addDigits = function (num) {
-  var temp
-  while (num > 9) {
-    temp = num
-    num = 0
-    while (temp) {
-      num += temp % 10
-      temp = Math.floor(temp / 10)
+    var temp
+    while (num > 9) {
+        temp = num
+        num = 0
+        while (temp) {
+            num += temp % 10
+            temp = Math.floor(temp / 10)
+        }
     }
-  }
-  return num
+    return num
 }
 
 /*  
@@ -38,6 +38,6 @@ var addDigits = function (num) {
     所以各位相加的结果模9 === 原数字模9
 */
 var addDigits = function (num) {
-  if (num < 1) return 0
-  return num % 9 ? num % 9 : 9
+    if (num < 1) return 0
+    return num % 9 ? num % 9 : 9
 }

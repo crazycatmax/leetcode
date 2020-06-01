@@ -25,25 +25,25 @@
 
 //  通过Symbol函数获取唯一值flag
 var detectCycle = function (head) {
-  var flag = Symbol()
-  while (head) {
-    if (head.val === flag) return head
-    head.val = flag
-    head = head.next
-  }
-  return null
+    var flag = Symbol()
+    while (head) {
+        if (head.val === flag) return head
+        head.val = flag
+        head = head.next
+    }
+    return null
 };
 
 // 借助 Map
 var detectCycle = function (head) {
-  var m = new Map()
-  while (head) {
-    if (m.has(head)) {
-      return head
-    } else {
-      m.set(head)
+    var m = new Map()
+    while (head) {
+        if (m.has(head)) {
+            return head
+        } else {
+            m.set(head)
+        }
+        head = head.next
     }
-    head = head.next
-  }
-  return null
+    return null
 };

@@ -15,34 +15,34 @@
 
 // 哈希表
 var judgeSquareSum = function (c) {
-  var i,
-    hash = {},
-    max = Math.pow(c, .5)
-  for (i = 0; i <= max; i++) {
-    hash[i * i] = 1
-    if (hash[c - i * i]) {
-      return true
+    var i,
+        hash = {},
+        max = Math.pow(c, .5)
+    for (i = 0; i <= max; i++) {
+        hash[i * i] = 1
+        if (hash[c - i * i]) {
+            return true
+        }
     }
-  }
-  return false
+    return false
 }
 
 // 双指针
 var judgeSquareSum = function (c) {
-  var i,
-    j,
-    temp,
-    max = c ** .5
-  i = 0
-  j = Math.floor(max)
-  while (i <= j) {
-    temp = i * i + j * j
-    if (temp === c) return true
-    if (temp > c) {
-      j--
-    } else {
-      i++
+    var i,
+        j,
+        temp,
+        max = c ** .5
+    i = 0
+    j = Math.floor(max)
+    while (i <= j) {
+        temp = i * i + j * j
+        if (temp === c) return true
+        if (temp > c) {
+            j--
+        } else {
+            i++
+        }
     }
-  }
-  return false
+    return false
 }

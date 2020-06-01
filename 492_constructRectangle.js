@@ -23,40 +23,40 @@
 
 // 双指针
 var constructRectangle = function (area) {
-  var l,
-    w
-  l = Math.floor(Math.pow(area, .5))
-  w = l
-  while (l * w !== area) {
-    if (l * w > area) {
-      w--
-    } else {
-      l++
+    var l,
+        w
+    l = Math.floor(Math.pow(area, .5))
+    w = l
+    while (l * w !== area) {
+        if (l * w > area) {
+            w--
+        } else {
+            l++
+        }
     }
-  }
-  return [l, w]
+    return [l, w]
 };
 
 // 只判断长 
 var constructRectangle = function (area) {
-  var l,
-    w
-  l = Math.floor(Math.pow(area, .5))
-  while (area % l !== 0) {
-    l++
-  }
+    var l,
+        w
+    l = Math.floor(Math.pow(area, .5))
+    while (area % l !== 0) {
+        l++
+    }
 
-  return l > area / l ? [l, area / l] : [area / l, l]
+    return l > area / l ? [l, area / l] : [area / l, l]
 };
 
 // 只判断宽
 var constructRectangle = function (area) {
-  var l,
-    w
-  w = Math.floor(Math.pow(area, .5))
-  while (area % w !== 0) {
-    w--
-  }
+    var l,
+        w
+    w = Math.floor(Math.pow(area, .5))
+    while (area % w !== 0) {
+        w--
+    }
 
-  return [area / w, w]
+    return [area / w, w]
 };

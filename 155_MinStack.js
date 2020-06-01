@@ -23,7 +23,7 @@ minStack.getMin();   --> 返回 -2. */
  * initialize your data structure here.
  */
 var MinStack = function () {
-	this.dataArr = []
+    this.dataArr = []
 };
 
 /** 
@@ -31,33 +31,33 @@ var MinStack = function () {
  * @return {void}
  */
 MinStack.prototype.push = function (x) {
-	this.dataArr.push(x)
+    this.dataArr.push(x)
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function () {
-	this.dataArr.pop()
+    this.dataArr.pop()
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function () {
-	return this.dataArr[this.dataArr.length - 1]
+    return this.dataArr[this.dataArr.length - 1]
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function () {
-	var min, i
-	min = this.dataArr[0]
-	for (item of this.dataArr) {
-		if (item < min) min = item
-	}
-	return min
+    var min, i
+    min = this.dataArr[0]
+    for (item of this.dataArr) {
+        if (item < min) min = item
+    }
+    return min
 };
 
 /** 

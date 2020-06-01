@@ -10,21 +10,21 @@
 
 // 递归 
 var swapPairs = function (head) {
-  if (!head || !head.next) { //排除 边界条件
-    return head
-  }
-  var next = head.next.next //记录 下一轮的链表
-  var newHead = head.next //次节点
-  newHead.next = head
-  head.next = swapPairs(next) //接收 下一轮的链表返回的头节点
-  return newHead //将交换后的头节点返回
+    if (!head || !head.next) { //排除 边界条件
+        return head
+    }
+    var next = head.next.next //记录 下一轮的链表
+    var newHead = head.next //次节点
+    newHead.next = head
+    head.next = swapPairs(next) //接收 下一轮的链表返回的头节点
+    return newHead //将交换后的头节点返回
 };
 
 // 递归 优化
 var swapPairs = function (head) {
-  if (!head || !head.next) return head
-  var temp = head.next
-  head.next = swapPairs(head.next.next)
-  temp.next = head
-  return temp
+    if (!head || !head.next) return head
+    var temp = head.next
+    head.next = swapPairs(head.next.next)
+    temp.next = head
+    return temp
 };

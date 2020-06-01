@@ -24,44 +24,44 @@
 
 // 循环迭代，待优化
 var spiralOrder = function (matrix) {
-  var m = matrix.length
-  if (m < 1) return matrix
-  var i = 0,
-    j = 0,
-    idx = -1,
-    dis = 0,
-    n = matrix[0].length,
-    res = []
-  while (1) {
-    for (; j < n - dis; j++) {
-      ++idx
-      res[idx] = matrix[i][j]
+    var m = matrix.length
+    if (m < 1) return matrix
+    var i = 0,
+        j = 0,
+        idx = -1,
+        dis = 0,
+        n = matrix[0].length,
+        res = []
+    while (1) {
+        for (; j < n - dis; j++) {
+            ++idx
+            res[idx] = matrix[i][j]
+        }
+        if (idx === m * n - 1) return res
+            --j
+            ++i
+        for (; i < m - dis; i++) {
+            ++idx
+            res[idx] = matrix[i][j]
+        }
+        --i
+        --j
+        if (idx === m * n - 1) return res
+        for (; j > dis - 1; j--) {
+            ++idx
+            res[idx] = matrix[i][j]
+        }
+        if (idx === m * n - 1) return res
+            ++j
+            --i
+        for (; i > dis; i--) {
+            ++idx
+            res[idx] = matrix[i][j]
+        }
+        if (idx === m * n - 1) return res
+            ++i
+            ++j
+            ++dis
     }
-    if (idx === m * n - 1) return res
-      --j
-      ++i
-    for (; i < m - dis; i++) {
-      ++idx
-      res[idx] = matrix[i][j]
-    }
-    --i
-    --j
-    if (idx === m * n - 1) return res
-    for (; j > dis - 1; j--) {
-      ++idx
-      res[idx] = matrix[i][j]
-    }
-    if (idx === m * n - 1) return res
-      ++j
-      --i
-    for (; i > dis; i--) {
-      ++idx
-      res[idx] = matrix[i][j]
-    }
-    if (idx === m * n - 1) return res
-      ++i
-      ++j
-      ++dis
-  }
-  return res
+    return res
 }

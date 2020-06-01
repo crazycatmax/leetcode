@@ -18,31 +18,31 @@
 
 // 内置方法
 var sortArray = function (nums) {
-  return nums.sort((a, b) => a - b)
+    return nums.sort((a, b) => a - b)
 };
 
 // 冒泡排序
 var sortArray = function (nums) {
-  var i,
-      j,
-      temp,
-      isSorted,
-      len = nums.length
-  for (i = 0; i < len - 1; i++) {
-      isSorted = true
-      for (j = 0; j < len - 1 - i; j++) {
-          if (nums[j] > nums[j + 1]) {
-              temp = nums[j]
-              nums[j] = nums[j + 1]
-              nums[j + 1] = temp
-              isSorted = false
-          }
-      }
-      if (isSorted) {
-          break
-      }
-  }
-  return nums
+    var i,
+        j,
+        temp,
+        isSorted,
+        len = nums.length
+    for (i = 0; i < len - 1; i++) {
+        isSorted = true
+        for (j = 0; j < len - 1 - i; j++) {
+            if (nums[j] > nums[j + 1]) {
+                temp = nums[j]
+                nums[j] = nums[j + 1]
+                nums[j + 1] = temp
+                isSorted = false
+            }
+        }
+        if (isSorted) {
+            break
+        }
+    }
+    return nums
 };
 
 // 选择排序

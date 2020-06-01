@@ -25,5 +25,5 @@
 
 // 直接采用内置方法
 var reverseBits = function (n) {
-  return Number.parseInt(n.toString(2).padStart(32, '0').split('').reverse().join(''), 2)
+    return Number.parseInt(n.toString(2).padStart(32, '0').split('').reverse().join(''), 2)
 };

@@ -15,60 +15,60 @@
 
 // 暴力循环
 var maxArea = function (height) {
-  var i,
-    j,
-    h,
-    w,
-    maxArea = 0,
-    len = height.length
-  for (i = 0; i < len - 1; i++) {
-    for (j = len - 1; j > i; j--) {
-      w = j - i
-      h = Math.min(height[i], height[j]) //取两边的min作为高
-      if (h * w > maxArea) maxArea = h * w
+    var i,
+        j,
+        h,
+        w,
+        maxArea = 0,
+        len = height.length
+    for (i = 0; i < len - 1; i++) {
+        for (j = len - 1; j > i; j--) {
+            w = j - i
+            h = Math.min(height[i], height[j]) //取两边的min作为高
+            if (h * w > maxArea) maxArea = h * w
+        }
     }
-  }
-  return maxArea
+    return maxArea
 };
 
 // 保留上一轮的最大值，通过比较胜率部分循环
 var maxArea = function (height) {
-  var i,
-    j,
-    h,
-    w,
-    maxArea = 0,
-    len = height.length,
-    lastH
-  for (i = 0; i < len - 1; i++) {
-    lastH = height[len - 1]
-    for (j = len - 1; j > i; j--) {
-      if (height[j] < lastH) continue //胜率部分循环
-      lastH = height[j]
-      h = Math.min(height[i], height[j])
-      w = j - i
-      if (h * w > maxArea) maxArea = h * w
+    var i,
+        j,
+        h,
+        w,
+        maxArea = 0,
+        len = height.length,
+        lastH
+    for (i = 0; i < len - 1; i++) {
+        lastH = height[len - 1]
+        for (j = len - 1; j > i; j--) {
+            if (height[j] < lastH) continue //胜率部分循环
+            lastH = height[j]
+            h = Math.min(height[i], height[j])
+            w = j - i
+            if (h * w > maxArea) maxArea = h * w
+        }
     }
-  }
-  return maxArea
+    return maxArea
 };
 
 // 双指针法
 var maxArea = function (height) {
-  var i = 0,
-    j = height.length - 1,
-    w,
-    h,
-    area = 0
-  while (i < j) {
-    w = j - i
-    h = Math.min(height[i], height[j])
-    if (w * h > area) area = w * h
-    if (height[i] <= height[j]) { //哪边小哪边移动
-      i++
-    } else {
-      j--
+    var i = 0,
+        j = height.length - 1,
+        w,
+        h,
+        area = 0
+    while (i < j) {
+        w = j - i
+        h = Math.min(height[i], height[j])
+        if (w * h > area) area = w * h
+        if (height[i] <= height[j]) { //哪边小哪边移动
+            i++
+        } else {
+            j--
+        }
     }
-  }
-  return area
+    return area
 };

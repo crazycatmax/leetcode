@@ -33,10 +33,10 @@
 
 // 
 var isMonotonic = function (A) {
-  var strA = JSON.stringify(A)
-  A.sort((a, b) => a - b)
-  var strB = JSON.stringify(A)
-  A.sort((a, b) => b - a)
-  var strC = JSON.stringify(A)
-  return strA === strB || strA === strC
+    var strA = JSON.stringify(A)
+    A.sort((a, b) => a - b)
+    var strB = JSON.stringify(A)
+    A.sort((a, b) => b - a)
+    var strC = JSON.stringify(A)
+    return strA === strB || strA === strC
 };

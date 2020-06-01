@@ -21,21 +21,21 @@
 
 // 
 var repeatedSubstringPattern = function (s) {
-  var i,
-      j,
-      findIndex
-  for (i = 0; i < Math.floor(s.length / 2); i++) {
-      tmpl = s.slice(0, i + 1) //模板字符串
-      j = 0 //查找的起始位置
-      while (j < s.length) {
-          findIndex = s.indexOf(tmpl, j)
-          if (findIndex === j) { //查找到，且位置是起始位置j，则跳到匹配字符串末尾的下一位
-              j += i + 1
-          } else { //查找不到，或者查找到的位置不是起始位置j，则跳出
-              break
-          }
-      }
-      if (j === s.length) return true
-  }
-  return false
+    var i,
+        j,
+        findIndex
+    for (i = 0; i < Math.floor(s.length / 2); i++) {
+        tmpl = s.slice(0, i + 1) //模板字符串
+        j = 0 //查找的起始位置
+        while (j < s.length) {
+            findIndex = s.indexOf(tmpl, j)
+            if (findIndex === j) { //查找到，且位置是起始位置j，则跳到匹配字符串末尾的下一位
+                j += i + 1
+            } else { //查找不到，或者查找到的位置不是起始位置j，则跳出
+                break
+            }
+        }
+        if (j === s.length) return true
+    }
+    return false
 };

@@ -18,23 +18,23 @@
 
 // 迭代
 var isHappy = function (n) {
-  var square,
-    num = n,
-    arr = []
-  while (true) {
-    if (num < 2) return true
-    square = 0
-    while (num) {
-      square = square + Math.pow(num % 10, 2)
-      num = Math.floor(num / 10)
+    var square,
+        num = n,
+        arr = []
+    while (true) {
+        if (num < 2) return true
+        square = 0
+        while (num) {
+            square = square + Math.pow(num % 10, 2)
+            num = Math.floor(num / 10)
+        }
+        num = square
+        if (arr[num]) {
+            return false //该数已经存在，进入无限循环，不是快乐数
+        } else {
+            arr[num] = 1
+        }
     }
-    num = square
-    if (arr[num]) {
-      return false //该数已经存在，进入无限循环，不是快乐数
-    } else {
-      arr[num] = 1
-    }
-  }
 }
 
 // 递归

@@ -18,24 +18,24 @@
 
 // 理论可行,阶乘溢出,结果错误
 var trailingZeroes = function (n) {
-  var i, count = 0,
-    res = 1
-  for (i = 1; i < n + 1; i++) {
-    res *= i
-  }
-  while (res % 10 === 0 && res > 0) {
-    count++
-    res = res / 10
-  }
-  return count
+    var i, count = 0,
+        res = 1
+    for (i = 1; i < n + 1; i++) {
+        res *= i
+    }
+    while (res % 10 === 0 && res > 0) {
+        count++
+        res = res / 10
+    }
+    return count
 }
 
 // 求阶乘中5的因子的个数
 var trailingZeroes = function (n) {
-  var count = 0
-  while (n > 0) {
-    count += Math.floor(n / 5)
-    n = Math.floor(n / 5)
-  }
-  return count
+    var count = 0
+    while (n > 0) {
+        count += Math.floor(n / 5)
+        n = Math.floor(n / 5)
+    }
+    return count
 }

@@ -16,32 +16,32 @@
 
 // 暴力循环
 var findMaxAverage = function (nums, k) {
-  var i,
-      j,
-      maxAver = -10001,
-      sum
-  for (i = 0; i < nums.length - k + 1; i++) {
-      sum = 0
-      for (j = i; j < i + k; j++) {
-          sum += nums[j]
-      }
-      if (sum / k > maxAver) maxAver = sum / k
-  }
-  return maxAver
+    var i,
+        j,
+        maxAver = -10001,
+        sum
+    for (i = 0; i < nums.length - k + 1; i++) {
+        sum = 0
+        for (j = i; j < i + k; j++) {
+            sum += nums[j]
+        }
+        if (sum / k > maxAver) maxAver = sum / k
+    }
+    return maxAver
 };
 
 // 滑动窗口
 var findMaxAverage = function (nums, k) {
-  var i,
-      sum = 0,
-      res //最大和
-  for (i = 0; i < k; i++) {
-      sum += nums[i]
-  }
-  res = sum
-  for (i = k; i < nums.length; i++) {
-      sum += nums[i] - nums[i - k]
-      res = Math.max(sum, res)
-  }
-  return res / k
+    var i,
+        sum = 0,
+        res //最大和
+    for (i = 0; i < k; i++) {
+        sum += nums[i]
+    }
+    res = sum
+    for (i = k; i < nums.length; i++) {
+        sum += nums[i] - nums[i - k]
+        res = Math.max(sum, res)
+    }
+    return res / k
 };

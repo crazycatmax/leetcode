@@ -15,42 +15,42 @@
 
 // 字符串数组方法
 var findMaxConsecutiveOnes = function (nums) {
-  var i,
-    max = 0,
-    arr = nums.join('').split('0').map(t => t.length)
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] > max) max = arr[i]
-  }
-  return max
+    var i,
+        max = 0,
+        arr = nums.join('').split('0').map(t => t.length)
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] > max) max = arr[i]
+    }
+    return max
 };
 
 // 遍历一遍
 var findMaxConsecutiveOnes = function (nums) {
-  var i,
-    count = 0,
-    max = 0
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i]) {
-      count++
-    } else {
-      if (count > max) max = count
-      count = 0
+    var i,
+        count = 0,
+        max = 0
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i]) {
+            count++
+        } else {
+            if (count > max) max = count
+            count = 0
+        }
     }
-  }
-  if (count && count > max) max = count
-  return max
+    if (count && count > max) max = count
+    return max
 };
 
 // 遍历一遍 优化
 var findMaxConsecutiveOnes = function (nums) {
-  var i,
-    j = 0,
-    max = 0
-  for (i = 0; i < nums.length; i++) {
-    if (!nums[i]) {
-      max = Math.max(i - j, max)
-      j = i + 1
+    var i,
+        j = 0,
+        max = 0
+    for (i = 0; i < nums.length; i++) {
+        if (!nums[i]) {
+            max = Math.max(i - j, max)
+            j = i + 1
+        }
     }
-  }
-  return Math.max(i - j, max)
+    return Math.max(i - j, max)
 };

@@ -25,12 +25,12 @@ n = 8
 
 // 
 var arrangeCoins = function (n) {
-  var i = 0,
-    sum = 0
-  while (sum <= n) {
-    ++i
-    sum += i
-  }
-  i--
-  return i
+    var i = 0,
+        sum = 0
+    while (sum <= n) {
+        ++i
+        sum += i
+    }
+    i--
+    return i
 };

@@ -27,18 +27,18 @@
 
 // 根据2 3 5分别做去除因子处理
 var isUgly = function (num) {
-  var temp
-  if (num < 1) return false
-  if (num === 1) return true
-  temp = num
-  while (temp % 2 === 0) {
-    temp /= 2
-  }
-  while (temp % 3 === 0) {
-    temp /= 3
-  }
-  while (temp % 5 === 0) {
-    temp /= 5
-  }
-  return temp === 1
+    var temp
+    if (num < 1) return false
+    if (num === 1) return true
+    temp = num
+    while (temp % 2 === 0) {
+        temp /= 2
+    }
+    while (temp % 3 === 0) {
+        temp /= 3
+    }
+    while (temp % 5 === 0) {
+        temp /= 5
+    }
+    return temp === 1
 }

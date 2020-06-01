@@ -19,35 +19,35 @@
 
 //  注意进位
 var plusOne = function (digits) {
-  var i,
-    add = false, //是否有进位
-    len = digits.length
-  digits[len - 1]++ //+1启动连锁反应
-  for (i = len - 1; i > -1; i--) {
-    if (add) {
-      digits[i]++
-      add = false
+    var i,
+        add = false, //是否有进位
+        len = digits.length
+    digits[len - 1]++ //+1启动连锁反应
+    for (i = len - 1; i > -1; i--) {
+        if (add) {
+            digits[i]++
+            add = false
+        }
+        if (digits[i] > 9) {
+            digits[i] = 0
+            add = true
+        }
     }
-    if (digits[i] > 9) {
-      digits[i] = 0
-      add = true
-    }
-  }
-  if (add) digits.unshift(1)
-  return digits
+    if (add) digits.unshift(1)
+    return digits
 };
 
 
 // 对if-else优化
 var plusOne = function (digits) {
-  var i,
-    add = false
-  digits[digits.length - 1]++
-  for (i = digits.length - 1; i > -1; i--) {
-    digits[i] += add
-    add = digits[i] >= 10
-    digits[i] %= 10
-  }
-  if (add) digits.unshift(1)
-  return digits
+    var i,
+        add = false
+    digits[digits.length - 1]++
+    for (i = digits.length - 1; i > -1; i--) {
+        digits[i] += add
+        add = digits[i] >= 10
+        digits[i] %= 10
+    }
+    if (add) digits.unshift(1)
+    return digits
 };

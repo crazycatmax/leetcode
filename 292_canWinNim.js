@@ -14,9 +14,9 @@
 
 
 var canWinNim = function (n) {
-  return n % 4 !== 0
+    return n % 4 !== 0
 };
 
 var canWinNim = function (n) {
-  return n & 3
+    return n & 3
 };

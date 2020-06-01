@@ -28,18 +28,18 @@
 
 // 
 var convertToTitle = function (n) {
-  var temp,
-    stack = [],
-    str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    s = ''
-  while (n) {
-    n-- //关键语句
-    temp = n % 26
-    stack.push(temp)
-    n = Math.floor(n / 26)
-  }
-  while ((temp = stack.pop()) !== undefined) {
-    s += str.charAt(temp)
-  }
-  return s
+    var temp,
+        stack = [],
+        str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        s = ''
+    while (n) {
+        n-- //关键语句
+        temp = n % 26
+        stack.push(temp)
+        n = Math.floor(n / 26)
+    }
+    while ((temp = stack.pop()) !== undefined) {
+        s += str.charAt(temp)
+    }
+    return s
 }

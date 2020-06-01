@@ -25,24 +25,24 @@
 
 // 双指针 快慢指针
 var hasCycle = function (head) {
-  var fast = slow = head
-  while (slow && fast && fast.next) {
-    slow = slow.next
-    fast = fast.next.next
-    if (slow && slow === fast) {
-      return true
+    var fast = slow = head
+    while (slow && fast && fast.next) {
+        slow = slow.next
+        fast = fast.next.next
+        if (slow && slow === fast) {
+            return true
+        }
     }
-  }
-  return false
+    return false
 };
 
 // 借助 Symbol函数
 var hasCycle = function (head) {
-  var flag = Symbol()
-  while (head) {
-    if (head.val === flag) return true
-    head.val = flag
-    head = head.next
-  }
-  return false
+    var flag = Symbol()
+    while (head) {
+        if (head.val === flag) return true
+        head.val = flag
+        head = head.next
+    }
+    return false
 };

@@ -40,23 +40,23 @@
 
 // 记录每张牌的个数,通过模运算判断
 var hasGroupsSizeX = function (deck) {
-  var i,
-    j,
-    hash = {}
-  for (i = 0; i < deck.length; i++) {
-    if (hash[deck[i]]) {
-      hash[deck[i]]++
-    } else {
-      hash[deck[i]] = 1
+    var i,
+        j,
+        hash = {}
+    for (i = 0; i < deck.length; i++) {
+        if (hash[deck[i]]) {
+            hash[deck[i]]++
+        } else {
+            hash[deck[i]] = 1
+        }
     }
-  }
-  var arr = Object.values(hash)
-  for (i = 2; i <= deck.length; i++) {
-    if (deck.length % i !== 0) continue
-    for (j = 0; j < arr.length; j++) {
-      if (arr[j] % i !== 0) break
+    var arr = Object.values(hash)
+    for (i = 2; i <= deck.length; i++) {
+        if (deck.length % i !== 0) continue
+        for (j = 0; j < arr.length; j++) {
+            if (arr[j] % i !== 0) break
+        }
+        if (j === arr.length) return true
     }
-    if (j === arr.length) return true
-  }
-  return false
+    return false
 };

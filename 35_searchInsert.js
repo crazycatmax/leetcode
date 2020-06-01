@@ -30,20 +30,20 @@
 
 //  二分查找
 var searchInsert = function (nums, target) {
-  var l = 0,
-    r = nums.length - 1,
-    m = Math.floor((r + l) / 2)
-  if (target > nums[r]) return r + 1
-  if (target <= nums[0]) return 0
-  while (l <= r) {
-    if (target === nums[m]) return m
-    if (target < nums[m]) {
-      r = m
-    } else {
-      l = m
+    var l = 0,
+        r = nums.length - 1,
+        m = Math.floor((r + l) / 2)
+    if (target > nums[r]) return r + 1
+    if (target <= nums[0]) return 0
+    while (l <= r) {
+        if (target === nums[m]) return m
+        if (target < nums[m]) {
+            r = m
+        } else {
+            l = m
+        }
+        m = Math.floor((r + l) / 2)
+        if (l === m) return l + 1
+        if (r === m) return r + 1
     }
-    m = Math.floor((r + l) / 2)
-    if (l === m) return l + 1
-    if (r === m) return r + 1
-  }
 };

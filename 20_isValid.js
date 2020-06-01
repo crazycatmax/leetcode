@@ -30,36 +30,36 @@
 
 // 
 var isValid = function (s) {
-  var i,
-    stack = [],
-    left = ['(', '[', '{'],
-    right = [')', ']', '}'],
-    couple = {
-      '(': ')',
-      '[': ']',
-      '{': '}'
+    var i,
+        stack = [],
+        left = ['(', '[', '{'],
+        right = [')', ']', '}'],
+        couple = {
+            '(': ')',
+            '[': ']',
+            '{': '}'
+        }
+    for (i = 0; i < s.length; i++) {
+        if (left.includes(s[i])) stack.push(s[i]) //左括号，则入栈
+        if (right.includes(s[i]) && s[i] !== couple[stack.pop()]) //右括号，则出栈，通过对象映射，进行比较
+            return false
     }
-  for (i = 0; i < s.length; i++) {
-    if (left.includes(s[i])) stack.push(s[i]) //左括号，则入栈
-    if (right.includes(s[i]) && s[i] !== couple[stack.pop()]) //右括号，则出栈，通过对象映射，进行比较
-      return false
-  }
-  return stack.length === 0
+    return stack.length === 0
 }
 
 
 // 
 var isValid = function (s) {
-  var i,
-    stack = [],
-    couple = {
-      ')': '(',
-      ']': '[',
-      '}': '{'
+    var i,
+        stack = [],
+        couple = {
+            ')': '(',
+            ']': '[',
+            '}': '{'
+        }
+    for (i = 0; i < s.length; i++) {
+        if (['(', '[', '{'].includes(s[i])) stack.push(s[i])
+        if ([')', ']', '}'].includes(s[i]) && couple[s[i]] !== stack.pop()) return false
     }
-  for (i = 0; i < s.length; i++) {
-    if (['(', '[', '{'].includes(s[i])) stack.push(s[i])
-    if ([')', ']', '}'].includes(s[i]) && couple[s[i]] !== stack.pop()) return false
-  }
-  return stack.length === 0
+    return stack.length === 0
 }

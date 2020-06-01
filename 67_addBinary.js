@@ -14,43 +14,43 @@
 
 
 var addBinary = function (a, b) {
-  var i,
-    len, //两个字符串最大长度
-    temp, //每一位加上进位后求和
-    arr = [],
-    add = 0 //进位
-  len = Math.max(a.length, b.length)
-  for (i = 0; i < len; i++) {
-    temp = (Number(a[a.length - 1 - i]) || 0) + (Number(b[b.length - 1 - i]) || 0) + add //或0 可以合并字符串中当前位置不存在的元素
-    add = Math.floor(temp / 2)
-    arr.push(temp % 2)
-  }
-  if (add) arr.push(1)
-  return arr.reverse().join('')
+    var i,
+        len, //两个字符串最大长度
+        temp, //每一位加上进位后求和
+        arr = [],
+        add = 0 //进位
+    len = Math.max(a.length, b.length)
+    for (i = 0; i < len; i++) {
+        temp = (Number(a[a.length - 1 - i]) || 0) + (Number(b[b.length - 1 - i]) || 0) + add //或0 可以合并字符串中当前位置不存在的元素
+        add = Math.floor(temp / 2)
+        arr.push(temp % 2)
+    }
+    if (add) arr.push(1)
+    return arr.reverse().join('')
 }
 
 var addBinary = function (a, b) {
-  var i = a.length - 1,
-    j = b.length - 1,
-    add = false,
-    temp,
-    numa,
-    numb,
-    res = ''
-  while (i > -1 || j > -1) {
-    numa = 0
-    numb = 0
-    if (i > -1) {
-      numa = Number(a.charAt(i--))
-    }
-    if (j > -1) {
-      numb = Number(b.charAt(j--))
-    }
+    var i = a.length - 1,
+        j = b.length - 1,
+        add = false,
+        temp,
+        numa,
+        numb,
+        res = ''
+    while (i > -1 || j > -1) {
+        numa = 0
+        numb = 0
+        if (i > -1) {
+            numa = Number(a.charAt(i--))
+        }
+        if (j > -1) {
+            numb = Number(b.charAt(j--))
+        }
 
-    temp = (numa + numb + add) % 2
-    add = numa + numb + add > 1
-    res = temp + res
-  }
-  if (add) res = '1' + res
-  return res
+        temp = (numa + numb + add) % 2
+        add = numa + numb + add > 1
+        res = temp + res
+    }
+    if (add) res = '1' + res
+    return res
 };

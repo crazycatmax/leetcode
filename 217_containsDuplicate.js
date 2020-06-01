@@ -19,17 +19,17 @@
 
 // 排序，两两对比
 var containsDuplicate = function (nums) {
-  var i
-  if (nums.length < 2) return false
-  nums.sort((a, b) => a - b)
-  for (i = 1; i < nums.length; i++) {
-    if (nums[i] === nums[i - 1]) return true
-  }
-  return false
+    var i
+    if (nums.length < 2) return false
+    nums.sort((a, b) => a - b)
+    for (i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) return true
+    }
+    return false
 }
 
 // set集合去重 通过元素个数判断
 var containsDuplicate = function (nums) {
-  const tmpSet = new Set(nums);
-  return tmpSet.size !== nums.length;
+    const tmpSet = new Set(nums);
+    return tmpSet.size !== nums.length;
 }

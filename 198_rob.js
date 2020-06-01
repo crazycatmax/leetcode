@@ -20,15 +20,15 @@
 
 // 动态规划
 var rob = function (nums) {
-  var i,
-    temp,
-    prevMax = 0,
-    currMax = 0,
-    len = nums.length
-  for (i = 0; i < len; i++) {
-    temp = currMax
-    currMax = Math.max(prevMax + nums[i], currMax)
-    prevMax = temp
-  }
-  return currMax
+    var i,
+        temp,
+        prevMax = 0,
+        currMax = 0,
+        len = nums.length
+    for (i = 0; i < len; i++) {
+        temp = currMax
+        currMax = Math.max(prevMax + nums[i], currMax)
+        prevMax = temp
+    }
+    return currMax
 }

@@ -20,27 +20,27 @@
 
 // while (i)
 var firstMissingPositive = function (nums) {
-  var i = 1
-  while (i) {
-    if (!nums.includes(i)) return i
-    i++
-  }
+    var i = 1
+    while (i) {
+        if (!nums.includes(i)) return i
+        i++
+    }
 };
 
 //while (true)
 var firstMissingPositive = function (nums) {
-  var i = 1
-  while (true) {
-    if (!nums.includes(i)) return i
-    i++
-  }
+    var i = 1
+    while (true) {
+        if (!nums.includes(i)) return i
+        i++
+    }
 };
 
 // 
 var firstMissingPositive = function (nums) {
-  var i = 1
-  while (nums.includes(i)) {
-    i++
-  }
-  return i
+    var i = 1
+    while (nums.includes(i)) {
+        i++
+    }
+    return i
 };

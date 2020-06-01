@@ -21,43 +21,43 @@ nums2 = [2,5,6],       n = 3
 
 // 从前往后
 var merge = function (nums1, m, nums2, n) {
-  var i,
-    j,
-    index = 0
-  if (!n) return nums1
-  for (i = n + m - 1; i >= n; i--) {
-    nums1[i] = nums1[i - n]
-  }
-  i = n
-  j = 0
-  while (i < m + n && j < n) {
-    if (nums1[i] < nums2[j]) {  //选取小的
-      nums1[index++] = nums1[i++]
-    } else {
-      nums1[index++] = nums2[j++]
+    var i,
+        j,
+        index = 0
+    if (!n) return nums1
+    for (i = n + m - 1; i >= n; i--) {
+        nums1[i] = nums1[i - n]
     }
-  }
-  while (j < n) {
-    nums1[index++] = nums2[j++]
-  }
-  return nums1
+    i = n
+    j = 0
+    while (i < m + n && j < n) {
+        if (nums1[i] < nums2[j]) { //选取小的
+            nums1[index++] = nums1[i++]
+        } else {
+            nums1[index++] = nums2[j++]
+        }
+    }
+    while (j < n) {
+        nums1[index++] = nums2[j++]
+    }
+    return nums1
 };
 
 // 从后往前
 var merge = function (nums1, m, nums2, n) {
-  if (!n) return nums1
-  var i = m - 1,
-    j = n - 1,
-    index = m + n - 1
-  while (i > -1 && j > -1) {
-    if (nums1[i] > nums2[j]) {  //选取大的
-      nums1[index--] = nums1[i--]
-    } else {
-      nums1[index--] = nums2[j--]
+    if (!n) return nums1
+    var i = m - 1,
+        j = n - 1,
+        index = m + n - 1
+    while (i > -1 && j > -1) {
+        if (nums1[i] > nums2[j]) { //选取大的
+            nums1[index--] = nums1[i--]
+        } else {
+            nums1[index--] = nums2[j--]
+        }
     }
-  }
-  while (j > -1) {
-    nums1[index--] = nums2[j--]
-  }
-  return nums1
+    while (j > -1) {
+        nums1[index--] = nums2[j--]
+    }
+    return nums1
 };

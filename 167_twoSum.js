@@ -16,17 +16,17 @@
 
 // 双指针
 var twoSum = function (numbers, target) {
-  var i = 0,
-    j = numbers.length - 1,
-    temp
-  while (1) {
-    temp = numbers[i] + numbers[j]
-    if (temp === target) break
-    if (temp > target) {
-      j--
-    } else {
-      i++
+    var i = 0,
+        j = numbers.length - 1,
+        temp
+    while (1) {
+        temp = numbers[i] + numbers[j]
+        if (temp === target) break
+        if (temp > target) {
+            j--
+        } else {
+            i++
+        }
     }
-  }
-  return [i + 1, j + 1]
+    return [i + 1, j + 1]
 };

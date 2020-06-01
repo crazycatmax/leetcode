@@ -25,16 +25,16 @@
 
 // 利用数组对节点的值进行判断
 var isPalindrome = function (head) {
-  var i,
-      len,
-      arr = []
-  while (head) {
-      arr.push(head.val)
-      head = head.next
-  }
-  len = Math.floor(arr.length / 2)
-  for (i = 0; i < len; i++) {
-      if (arr[i] !== arr[arr.length - 1 - i]) return false
-  }
-  return true
+    var i,
+        len,
+        arr = []
+    while (head) {
+        arr.push(head.val)
+        head = head.next
+    }
+    len = Math.floor(arr.length / 2)
+    for (i = 0; i < len; i++) {
+        if (arr[i] !== arr[arr.length - 1 - i]) return false
+    }
+    return true
 };

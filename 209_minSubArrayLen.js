@@ -15,19 +15,19 @@
 
 // 滑动窗口
 var minSubArrayLen = function (s, nums) {
-  var i,
-    j = 0,
-    sum = 0,
-    minLen = nums.length
-  for (i = 0; i < nums.length; i++) {
-    sum += nums[i]
-    if (sum < s) continue
-    while (sum >= s) {
-      sum -= nums[j]
-      j++
+    var i,
+        j = 0,
+        sum = 0,
+        minLen = nums.length
+    for (i = 0; i < nums.length; i++) {
+        sum += nums[i]
+        if (sum < s) continue
+        while (sum >= s) {
+            sum -= nums[j]
+            j++
+        }
+        minLen = Math.min(minLen, i - j + 2) //(i-j+1)+1 多减了一个数，所以再补加1
     }
-    minLen = Math.min(minLen, i - j + 2)  //(i-j+1)+1 多减了一个数，所以再补加1
-  }
-  if (j < 1) return 0
-  return minLen
+    if (j < 1) return 0
+    return minLen
 };

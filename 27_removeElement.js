@@ -32,41 +32,41 @@ for (int i = 0; i < len; i++) {
 
 // splice 删除元素
 var removeElement = function (nums, val) {
-  var i, len
-  for (i = 0, len = nums.length; i < len; i++) {
-    if (val === nums[i]) {
-      nums.splice(i, 1)
-      i--
-      len--
+    var i, len
+    for (i = 0, len = nums.length; i < len; i++) {
+        if (val === nums[i]) {
+            nums.splice(i, 1)
+            i--
+            len--
+        }
     }
-  }
-  return nums.length
+    return nums.length
 };
 
 // 同上，循环条件nums.length动态变化
 var removeElement = function (nums, val) {
-  for (var i = 0; i < nums.length; i++) {
-    if (val === nums[i]) {
-      nums.splice(i, 1)
-      i--
+    for (var i = 0; i < nums.length; i++) {
+        if (val === nums[i]) {
+            nums.splice(i, 1)
+            i--
+        }
     }
-  }
-  return nums.length
+    return nums.length
 };
 
 // 快慢指针
 var removeElement = function (nums, val) {
-  var i, k = 0
-  for (i = 0; i < nums.length; i++) {
-    if (val !== nums[i]) {
-      nums[k++] = nums[i]
+    var i, k = 0
+    for (i = 0; i < nums.length; i++) {
+        if (val !== nums[i]) {
+            nums[k++] = nums[i]
+        }
     }
-  }
-  return k
+    return k
 };
 
 // es6 数组过滤方法 filter
 var removeElement = function (nums, val) {
-  nums = nums.filter(t => t !== val)
-  return nums.length
+    nums = nums.filter(t => t !== val)
+    return nums.length
 };

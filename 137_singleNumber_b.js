@@ -16,18 +16,18 @@
 
 // 数组方法 filter
 var singleNumber = function (nums) {
-  return nums.filter(item => nums.lastIndexOf(item) === nums.indexOf(item))[0]
+    return nums.filter(item => nums.lastIndexOf(item) === nums.indexOf(item))[0]
 };
 
 // 暴力循环
 var singleNumber = function (nums) {
-  var i, j
-  for (i = 0; i < nums.length; i++) {
-    for (j = 0; j < nums.length; j++) {
-      if (nums[j] === nums[i] && j !== i)
-        break
+    var i, j
+    for (i = 0; i < nums.length; i++) {
+        for (j = 0; j < nums.length; j++) {
+            if (nums[j] === nums[i] && j !== i)
+                break
+        }
+        if (j === nums.length)
+            return nums[i]
     }
-    if (j === nums.length)
-      return nums[i]
-  }
 };

@@ -28,11 +28,11 @@
 
 // 位运算
 var hammingWeight = function (n) {
-  var len = n.toString(2).length,
-    count = 0
-  while (len--) {
-    if (n & 1 === 1) count++
-    n >>= 1
-  }
-  return count
+    var len = n.toString(2).length,
+        count = 0
+    while (len--) {
+        if (n & 1 === 1) count++
+        n >>= 1
+    }
+    return count
 };

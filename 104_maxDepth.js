@@ -18,32 +18,32 @@
 
 // 借助 max函数 递归实现
 var maxDepth = function (root) {
-  if (!root) return 0
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+    if (!root) return 0
+    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
 };
 
 // 借助 stack 实现深度优先搜索
 var maxDepth = function (root) {
-  var stack = [],
-    maxDep = 0,
-    temp
-  stack.push({
-    dep: 1,
-    node: root
-  })
-  while (stack.length > 0) {
-    temp = stack.pop()
-    if (temp.node) {
-      maxDep = Math.max(maxDep, temp.dep)
-      stack.push({
-        dep: temp.dep + 1,
-        node: temp.node.left
-      })
-      stack.push({
-        dep: temp.dep + 1,
-        node: temp.node.right
-      })
+    var stack = [],
+        maxDep = 0,
+        temp
+    stack.push({
+        dep: 1,
+        node: root
+    })
+    while (stack.length > 0) {
+        temp = stack.pop()
+        if (temp.node) {
+            maxDep = Math.max(maxDep, temp.dep)
+            stack.push({
+                dep: temp.dep + 1,
+                node: temp.node.left
+            })
+            stack.push({
+                dep: temp.dep + 1,
+                node: temp.node.right
+            })
+        }
     }
-  }
-  return maxDep
+    return maxDep
 }

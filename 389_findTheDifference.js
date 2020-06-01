@@ -20,19 +20,19 @@ e
 
 // 借助 ascii码 
 var findTheDifference = function (s, t) {
-  var i,
-    num = 0
-  for (i = 0; i < s.length; i++) {
-    num -= s.codePointAt(i)
+    var i,
+        num = 0
+    for (i = 0; i < s.length; i++) {
+        num -= s.codePointAt(i)
+        num += t.codePointAt(i)
+    }
     num += t.codePointAt(i)
-  }
-  num += t.codePointAt(i)
-  return String.fromCharCode(num)
+    return String.fromCharCode(num)
 };
 
 // 数组方法
 var findTheDifference = function (s, t) {
-  var arr1 = s.split('').sort((a, b) => a.codePointAt(0) - b.codePointAt(0))
-  var arr2 = t.split('').sort((a, b) => a.codePointAt(0) - b.codePointAt(0))
-  return arr2.filter((t, i) => arr1[i] !== t)[0]
+    var arr1 = s.split('').sort((a, b) => a.codePointAt(0) - b.codePointAt(0))
+    var arr2 = t.split('').sort((a, b) => a.codePointAt(0) - b.codePointAt(0))
+    return arr2.filter((t, i) => arr1[i] !== t)[0]
 };

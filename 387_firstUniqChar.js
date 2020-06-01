@@ -12,22 +12,22 @@ s = "loveleetcode",
 
 // 字符串方法
 var firstUniqChar = function (s) {
-  var i
-  for (i = 0; i < s.length; i++) {
-    if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) return i
-  }
-  return -1
+    var i
+    for (i = 0; i < s.length; i++) {
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) return i
+    }
+    return -1
 };
 
 // 暴力循环
 var firstUniqChar = function (s) {
-  var i,
-    j
-  for (i = 0; i < s.length; i++) {
-    for (j = 0; j < s.length; j++) {
-      if (s[i] === s[j] && i !== j) break
+    var i,
+        j
+    for (i = 0; i < s.length; i++) {
+        for (j = 0; j < s.length; j++) {
+            if (s[i] === s[j] && i !== j) break
+        }
+        if (j === s.length) return i
     }
-    if (j === s.length) return i
-  }
-  return -1
+    return -1
 };

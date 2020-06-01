@@ -45,23 +45,23 @@
 
 //  递归 字符串数组方法
 var tree2str = function (t) {
-  function recur(r) {
-    if (r === null) return ''
-    if (r.left === null && r.right === null) return '' + r.val
-    return r.val + '(' + recur(r.left) + ')(' + recur(r.right) + ')'
-  }
-  return recur(t).replace(/\(\)$/g, '').replace(/\(\)\)/g, ')')
+    function recur(r) {
+        if (r === null) return ''
+        if (r.left === null && r.right === null) return '' + r.val
+        return r.val + '(' + recur(r.left) + ')(' + recur(r.right) + ')'
+    }
+    return recur(t).replace(/\(\)$/g, '').replace(/\(\)\)/g, ')')
 };
 
 // 递归
 var tree2str = function (t) {
-  function recur(r) {
-    if (r === null) return '()'
-    if (r.right === null) {
-      var temp = r.left === null ? '' : recur(r.left)
-      return '(' + r.val + temp + ')'
+    function recur(r) {
+        if (r === null) return '()'
+        if (r.right === null) {
+            var temp = r.left === null ? '' : recur(r.left)
+            return '(' + r.val + temp + ')'
+        }
+        return '(' + r.val + recur(r.left) + recur(r.right) + ')'
     }
-    return '(' + r.val + recur(r.left) + recur(r.right) + ')'
-  }
-  return recur(t).slice(1, -1)
+    return recur(t).slice(1, -1)
 };

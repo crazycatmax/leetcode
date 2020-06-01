@@ -25,24 +25,24 @@
 
 // pop/unshift
 var rotate = function (nums, k) {
-  while (k--) {
-    nums.unshift(nums.pop())
-  }
-  return nums
+    while (k--) {
+        nums.unshift(nums.pop())
+    }
+    return nums
 };
 
 // slice
 var rotate = function (nums, k) {
-  return [...nums.slice(nums.length - k), ...nums.slice(0, nums.length - k)]
+    return [...nums.slice(nums.length - k), ...nums.slice(0, nums.length - k)]
 }
 
 // reverse
 var rotate = function (nums, k) {
-  nums.reverse()
-  return [...nums.slice(0, k).reverse(), ...nums.slice(k).reverse()]
+    nums.reverse()
+    return [...nums.slice(0, k).reverse(), ...nums.slice(k).reverse()]
 }
 
 // splice
 var rotate = function (nums, k) {
-  return nums.splice(0, 0, ...nums.splice(nums.length - k))
+    return nums.splice(0, 0, ...nums.splice(nums.length - k))
 };

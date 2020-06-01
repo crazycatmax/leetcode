@@ -16,36 +16,38 @@ canConstruct("aa", "aab") -> true */
 
 // 暴力法
 var canConstruct = function (ransomNote, magazine) {
-  var i,
-    hash = {}
-  for (i = 0; i < magazine.length; i++) {
-    if (hash[magazine[i]]) {
-      hash[magazine[i]]++
-    } else [
-      hash[magazine[i]] = 1
-    ]
-  }
-  for (i = 0; i < ransomNote.length; i++) {
-    if (!hash[ransomNote[i]] || hash[ransomNote[i]] < 1)
-      return false
-    hash[ransomNote[i]]--
-  }
-  return true
+    var i,
+        hash = {}
+    for (i = 0; i < magazine.length; i++) {
+        if (hash[magazine[i]]) {
+            hash[magazine[i]]++
+        } else [
+            hash[magazine[i]] = 1
+        ]
+    }
+    for (i = 0; i < ransomNote.length; i++) {
+        if (!hash[ransomNote[i]] || hash[ransomNote[i]] < 1)
+            return false
+        hash[ransomNote[i]]--
+    }
+    return true
 }
 
 // 通过 ascii码 来计数
 var canConstruct = function (ransomNote, magazine) {
-  var i,
-    hash = Array.from({ length: 26 }),
-    trans = c => c.codePointAt(0)
-  hash.fill(0)
-  for (i = 0; i < magazine.length; i += 1) {
-    hash[trans(magazine[i]) - trans('a')]++
-  }
-  for (i = 0; i < ransomNote.length; i += 1) {
-    hash[trans(ransomNote[i]) - trans('a')]--
-    if (hash[trans(ransomNote[i]) - trans('a')] < 0)
-      return false
-  }
-  return true
+    var i,
+        hash = Array.from({
+            length: 26
+        }),
+        trans = c => c.codePointAt(0)
+    hash.fill(0)
+    for (i = 0; i < magazine.length; i += 1) {
+        hash[trans(magazine[i]) - trans('a')]++
+    }
+    for (i = 0; i < ransomNote.length; i += 1) {
+        hash[trans(ransomNote[i]) - trans('a')]--
+        if (hash[trans(ransomNote[i]) - trans('a')] < 0)
+            return false
+    }
+    return true
 }

@@ -23,13 +23,13 @@
 
 // 
 var thirdMax = function (nums) {
-  var i = 0,
-    count = 0
-  nums.sort((a, b) => b - a)
-  while (i < nums.length) {
-    if (nums[i] > nums[i + 1] || i === nums.length - 1) count++
-    if (count > 2) return nums[i]
-    i++
-  }
-  return nums[0]
+    var i = 0,
+        count = 0
+    nums.sort((a, b) => b - a)
+    while (i < nums.length) {
+        if (nums[i] > nums[i + 1] || i === nums.length - 1) count++
+        if (count > 2) return nums[i]
+        i++
+    }
+    return nums[0]
 };

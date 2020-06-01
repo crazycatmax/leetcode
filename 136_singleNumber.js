@@ -17,35 +17,35 @@
 
 // 数组 filter方法
 var singleNumber = function (nums) {
-  return nums.filter(item => nums.lastIndexOf(item) === nums.indexOf(item))[0]
+    return nums.filter(item => nums.lastIndexOf(item) === nums.indexOf(item))[0]
 };
 
 // 暴力循环
 var singleNumber = function (nums) {
-  var i, j
-  for (i = 0; i < nums.length; i++) {
-    for (j = 0; j < nums.length; j++) {
-      if (nums[j] === nums[i] && j !== i)
-        break
+    var i, j
+    for (i = 0; i < nums.length; i++) {
+        for (j = 0; j < nums.length; j++) {
+            if (nums[j] === nums[i] && j !== i)
+                break
+        }
+        if (j === nums.length)
+            return nums[i]
     }
-    if (j === nums.length)
-      return nums[i]
-  }
 };
 
 // 排序 找出不等于前后元素的元素
 var singleNumber = function (nums) {
-  nums.sort((a, b) => a - b)
-  if (nums[0] !== nums[1]) return nums[0]
-  if (nums[nums.length - 1] !== nums[nums.length - 2]) return nums[nums.length - 1]
-  return nums.filter((t, i) => t !== nums[i - 1] && t !== nums[i + 1])[0]
+    nums.sort((a, b) => a - b)
+    if (nums[0] !== nums[1]) return nums[0]
+    if (nums[nums.length - 1] !== nums[nums.length - 2]) return nums[nums.length - 1]
+    return nums.filter((t, i) => t !== nums[i - 1] && t !== nums[i + 1])[0]
 }
 
 // 异或运算^  x^x=0 x^0=x
 var singleNumber = function (nums) {
-  var res, num
-  for (num of nums) {
-    res ^= num
-  }
-  return res
+    var res, num
+    for (num of nums) {
+        res ^= num
+    }
+    return res
 };

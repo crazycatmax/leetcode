@@ -21,5 +21,5 @@
 
 // 
 var findDuplicate = function (nums) {
-  return nums.find(t => nums.indexOf(t) !== nums.lastIndexOf(t))
+    return nums.find(t => nums.indexOf(t) !== nums.lastIndexOf(t))
 };

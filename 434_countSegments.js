@@ -13,9 +13,9 @@
 
 
 var countSegments = function (s) {
-  return s.split(/\s+/).filter(t => t.length > 0).length
+    return s.split(/\s+/).filter(t => t.length > 0).length
 };
 
 var countSegments = function (s) {
-  return s.split('').filter((t, i) => s[i] !== ' ' && (s[i - 1] === ' ' || i < 1)).length
+    return s.split('').filter((t, i) => s[i] !== ' ' && (s[i - 1] === ' ' || i < 1)).length
 };

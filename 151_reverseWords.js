@@ -28,25 +28,25 @@
 
 // 字符串数组方法
 var reverseWords = function (s) {
-  return s.trim().split(/\s+/).reverse().join(' ')
+    return s.trim().split(/\s+/).reverse().join(' ')
 };
 
 // if else 逐个字符判断
 var reverseWords = function (s) {
-  var i,
-    j,
-    str = '',
-    res = ''
-  for (i = 0; i < s.length; i++) {
-    if (s[i] !== ' ') {
-      str += s[i]
-    } else {
-      if (str) {
-        res = str + ' ' + res
-        str = ''
-      }
+    var i,
+        j,
+        str = '',
+        res = ''
+    for (i = 0; i < s.length; i++) {
+        if (s[i] !== ' ') {
+            str += s[i]
+        } else {
+            if (str) {
+                res = str + ' ' + res
+                str = ''
+            }
+        }
     }
-  }
-  if (str) res = str + ' ' + res
-  return res.slice(0, res.length - 1)
+    if (str) res = str + ' ' + res
+    return res.slice(0, res.length - 1)
 };
