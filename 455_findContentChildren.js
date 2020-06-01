@@ -28,17 +28,17 @@
 
 // 双指针滑动，从最小胃口开始
 var findContentChildren = function (g, s) {
-  var i = 0,
-    j = 0,
-    count = 0 //满足胃口人数计数
-  g.sort((a, b) => a - b)
-  s.sort((a, b) => a - b)
-  while (i < g.length && j < s.length) {
-    if (g[i] <= s[j]) { //孩子胃口<=饼干尺寸时，孩子切换，计数累加
-      i++
-      count++
+    var i = 0,
+        j = 0,
+        count = 0 //满足胃口人数计数
+    g.sort((a, b) => a - b)
+    s.sort((a, b) => a - b)
+    while (i < g.length && j < s.length) {
+        if (g[i] <= s[j]) { //孩子胃口<=饼干尺寸时，孩子切换，计数累加
+            i++
+            count++
+        }
+        j++ //饼干切换
     }
-    j++ //饼干切换
-  }
-  return count
+    return count
 };
