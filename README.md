@@ -1,3 +1,5 @@
 # leetcode
-enjoy the leetcode
-share codes
+- enjoy the leetcode
+
+- enjoy algorithm
+
